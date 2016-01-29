@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 488966}
   - 114: {fileID: 11407588}
+  - 114: {fileID: 11424626}
   m_Layer: 0
   m_Name: Stage
   m_TagString: Untagged
@@ -43,6 +44,24 @@ MonoBehaviour:
   _players:
   - {fileID: 0}
   - {fileID: 0}
+  _lib: {fileID: 11424626}
+--- !u!114 &11424626
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7616b2fcb84c54f9d9205ba50447da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Moves:
+  - Steps:
+    - p0: 1
+      p1: 1
+    - p0: 3
+      p1: 3
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

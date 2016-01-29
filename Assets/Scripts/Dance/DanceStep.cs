@@ -7,6 +7,8 @@ public enum DanceStep {
     Away,
     Close,
     Swap,
+    TandemLeft,
+    TandemRight,
     Up,
     Down,
     Idle

@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323276a0b836d9d47bac25b1f3438123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _beatLength: 1
+  _beatLength: 0.5
   _players:
   - {fileID: 0}
   - {fileID: 0}
@@ -60,8 +60,13 @@ MonoBehaviour:
   - Steps:
     - p0: 1
       p1: 1
+    - p0: 5
+      p1: 5
+  - Steps:
     - p0: 3
       p1: 3
+    - p0: 4
+      p1: 4
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

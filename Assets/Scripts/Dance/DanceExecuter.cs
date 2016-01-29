@@ -41,14 +41,20 @@ public class DanceExecuter : MonoBehaviour {
 
     private void ProcessMoves(PlayerControl.PlayerMoves[] moves) {
         bool flip = ArePlayersFlipped();
-        _commandHistory.Add(new DanceStepPair {
-            p0 = GetDanceStep(moves[0], flip),
-            p1 = GetDanceStep(moves[1], !flip)
-        });
-        _commandHistoryFlip.Add(new DanceStepPair {
-            p0 = GetDanceStep(moves[1], !flip),
-            p1 = GetDanceStep(moves[0], flip)
-        });
+
+        var move = new DanceStepPair {
+            p0 = GetDanceStep(moves[0], moves[1], flip),
+            p1 = GetDanceStep(moves[1], moves[0], !flip)
+        };
+
+        _commandHistory.Add(move);
+        _commandHistoryFlip.Add(move.Flip());
+
+        if (_commandHistory.Count > 10) {
+            _commandHistory.RemoveAt(0);
+            _commandHistoryFlip.RemoveAt(0);
+        }
+
         CheckDanceSequence();
     }
 
@@ -81,8 +87,17 @@ public class DanceExecuter : MonoBehaviour {
         return (pair0.p0 == pair1.p0) && (pair0.p1 == pair1.p1);
     }
 
-    private DanceStep GetDanceStep(PlayerControl.PlayerMoves playerMoves, bool flip) {
-        switch (playerMoves) {
+    private DanceStep GetDanceStep(PlayerControl.PlayerMoves move, PlayerControl.PlayerMoves otherMove, bool flip) {
+        if (move == otherMove) {
+            switch (move) {
+                case PlayerControl.PlayerMoves.Left:
+                    return DanceStep.TandemLeft;
+                case PlayerControl.PlayerMoves.Right:
+                    return DanceStep.TandemRight;
+            }
+        }
+
+        switch (move) {
             case PlayerControl.PlayerMoves.Down:
                 return DanceStep.Down;
             case PlayerControl.PlayerMoves.Up:
@@ -91,9 +106,8 @@ public class DanceExecuter : MonoBehaviour {
                 return flip ? DanceStep.Close : DanceStep.Away;
             case PlayerControl.PlayerMoves.Right:
                 return flip ? DanceStep.Away : DanceStep.Close;
-            case PlayerControl.PlayerMoves.Idle:
-                return DanceStep.Idle;
         }
+
         return DanceStep.Idle;
     }
 

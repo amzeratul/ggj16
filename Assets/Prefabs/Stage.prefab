@@ -178,6 +178,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e32501eaa5d484e92d7b9e78eb61ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _variableTargets:
+  - Name: ground
+    Object: {fileID: 0}
+  - Name: sky
+    Object: {fileID: 0}
+  - Name: ocean
+    Object: {fileID: 0}
+  - Name: sun
+    Object: {fileID: 0}
+  - Name: moon
+    Object: {fileID: 0}
 --- !u!114 &11424626
 MonoBehaviour:
   m_ObjectHideFlags: 1

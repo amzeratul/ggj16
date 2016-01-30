@@ -15,11 +15,12 @@ public class MenuUI : MonoBehaviour {
 
     protected void Start() {
         SetScreen(HelpScreen, false);
+        FadeUI.Instance.FadeIn(0);
     }
 
     public void SetScreen(GameObject screen, bool fade = true) {
         if (fade) {
-            FadeUI.Instance.CrossFade(1.0f, () => DoSetScreen(screen));
+            FadeUI.Instance.CrossFade(2.0f, () => DoSetScreen(screen));
         } else {
             DoSetScreen(screen);
         }

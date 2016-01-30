@@ -22,7 +22,7 @@ public class MoveableWorldBit : MonoBehaviour {
     private IEnumerator DoMoveTowards(GameObject target, Vector2 endPos, float time) {
         Vector2 startPos = target.transform.position;
         for (float t = 0; t < 1; t += Time.deltaTime / time) {
-            target.transform.position = Vector2.Lerp(startPos, endPos, MathUtil.Smooth(t));
+            target.transform.position = MathUtil.Lerp(startPos, endPos, MathUtil.Overshoot(MathUtil.Smooth(t)));
             yield return null;
         }
         target.transform.position = endPos;

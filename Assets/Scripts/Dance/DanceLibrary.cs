@@ -95,6 +95,10 @@ class DanceLibrary : MonoBehaviour {
             return DanceStep.Swap;
         case '.':
             return DanceStep.Idle;
+        case 'l':
+            return DanceStep.TandemLeft;
+        case 'r':
+            return DanceStep.TandemRight;
         }
         throw new Exception("Failed to parse move: \"" + s + "\"");
     }

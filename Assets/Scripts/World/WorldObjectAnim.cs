@@ -29,7 +29,7 @@ public class WorldObjectAnim : MonoBehaviour, Rhythm.Listener {
 	protected void Update () {
 	    float t = 0.5f;
 	    if (_animating) {
-	        _time += _bpm / (60.0f * _beats) * Time.deltaTime;
+	        _time = (_time + (_bpm / (60.0f * _beats) * Time.deltaTime)) % 1.0f;
 	        t = MathUtil.Smooth(Mathf.Abs(1.0f - Mathf.Abs(1 - 2 * (_time + 0.25f))));
 	    }
 

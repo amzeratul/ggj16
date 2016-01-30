@@ -58,17 +58,7 @@ public class DanceExecuter : MonoBehaviour, Rhythm.Listener {
         _players[0].DoMove(p0 == DanceStep.Fumble ? PlayerControl.PlayerMoves.Fumble : moves[0]);
         _players[1].DoMove(p1 == DanceStep.Fumble ? PlayerControl.PlayerMoves.Fumble : moves[1]);
     }
-
-    private int PositionAfter(int startPos, PlayerControl.PlayerMoves move) {
-        if (move == PlayerControl.PlayerMoves.Left) {
-            return startPos - 1;
-        }
-        if (move == PlayerControl.PlayerMoves.Right) {
-            return startPos + 1;
-        }
-        return startPos;
-    }
-
+    
     private void CheckDanceSequence() {
         var bestMatch = _danceLibrary.Where(SequenceMatches).OrderBy(m => m.Steps.Length).LastOrDefault();
         if (bestMatch != null) {
@@ -79,10 +69,14 @@ public class DanceExecuter : MonoBehaviour, Rhythm.Listener {
     }
 
     private void ExecuteDanceMove(DanceMove bestMatch) {
-        Debug.Log("Executing move: " + bestMatch);
+        Debug.Log("Executing move: " + bestMatch.Description);
     }
 
     private bool SequenceMatches(DanceMove danceMove) {
+        if (danceMove.Steps.Length == 0) {
+            return false;
+        }
+
         if (danceMove.Steps.Length > _commandHistory.Count) {
             return false;
         }
@@ -99,6 +93,7 @@ public class DanceExecuter : MonoBehaviour, Rhythm.Listener {
     }
 
     private DanceStep GetDanceStep(PlayerControl.PlayerMoves move, PlayerControl.PlayerMoves otherMove, bool flip, int distance) {
+        // Tandem
         if (move == otherMove) {
             switch (move) {
                 case PlayerControl.PlayerMoves.Left:
@@ -108,7 +103,13 @@ public class DanceExecuter : MonoBehaviour, Rhythm.Listener {
             }
         }
 
-        switch (move) {
+        // Swap
+        if (distance == 1 && ((flip && move == PlayerControl.PlayerMoves.Left && otherMove == PlayerControl.PlayerMoves.Right) || (!flip && move == PlayerControl.PlayerMoves.Right && otherMove == PlayerControl.PlayerMoves.Left))) {
+            return DanceStep.Swap;
+        }
+
+        // Normal
+            switch (move) {
             case PlayerControl.PlayerMoves.Down:
                 return DanceStep.Down;
             case PlayerControl.PlayerMoves.Up:

@@ -43,6 +43,9 @@ public class PlayerControl : MonoBehaviour {
         }
         _position = _playerNumber * 2 - 1;
         transform.position = GetScreenPosition(_position);
+        if (_playerNumber == 1) {
+            _renderer.color = new Color(0.3f, 0.8f, 0.6f);
+        }
     }
 
     private void SetInput(Vector2 input) {

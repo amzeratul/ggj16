@@ -1,0 +1,21 @@
+Move id,Effect,Requires,Player 1 sequence,Player 2 sequence
+1,Upgrade ground (no -> flat -> grass -> lush),,v v,v v
+2,Upgrade sky (no -> night -> dawn -> noon),,^ ^,^ ^
+3,Raise the Sun,sky at dawn+,^ < ^,^ > ^
+4,Raise the Moon,sky at night+,^ > ^,^ < ^
+5,Add tree #1,ground at grass+,,
+6,Add tree #2,ground at grass+,,
+7,Add mountain #1,ground,,
+8,Add mountain #2,ground,,
+9,Add bird #1,,,
+10,Add bird #2,,,
+11,Add bird #3,,,
+12,Add flower #1,ground at lush+,,
+13,Add flower #2,ground at lush+,,
+14,Add bush #1,ground at lush+,,
+15,Add cloud #1,sky at night+,,
+16,Add cloud #2,sky at night+,,
+17,Add totem,,< ^ v,^ < >
+18,Add floating totem,,x ^ x,x v x
+19,Add fireflies,,,
+20,Add ocean,ground,,

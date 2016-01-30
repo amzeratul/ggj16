@@ -6,4 +6,5 @@ using System.Text;
 [Serializable]
 public class DanceMove {
     public DanceStepPair[] Steps;
+    public string Description;
 }

@@ -175,17 +175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7616b2fcb84c54f9d9205ba50447da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Moves:
-  - Steps:
-    - p0: 1
-      p1: 1
-    - p0: 5
-      p1: 5
-  - Steps:
-    - p0: 3
-      p1: 3
-    - p0: 4
-      p1: 4
+  Moves: []
+  _data: {fileID: 4900000, guid: 0670fec746510bd43be85a9459ba5316, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

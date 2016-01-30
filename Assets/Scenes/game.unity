@@ -143,6 +143,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1609200efa7ecd498b12bb0db0a07e9, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &157464407 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11438622, guid: f1609200efa7ecd498b12bb0db0a07e9,
+    type: 2}
+  m_PrefabInternal: {fileID: 121932204}
+  m_Script: {fileID: 11500000, guid: e5ea4dada230be148b77438f7760a2dd, type: 3}
 --- !u!114 &262408056 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11460664, guid: 5dc50ae8201bfa24cb89572d8bbb77b0,
@@ -383,6 +389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _beats: 4
   _animType: 0
+  BaseRotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1001 &1256358399
 Prefab:
   m_ObjectHideFlags: 0
@@ -556,6 +563,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11436520, guid: f633aedde2dc84b41a94b8470c05d724, type: 2}
+      propertyPath: _progress
+      value: 
+      objectReference: {fileID: 157464407}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f633aedde2dc84b41a94b8470c05d724, type: 2}
   m_IsPrefabParent: 0
@@ -631,6 +642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _beats: 4
   _animType: 1
+  BaseRotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &1839319748 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11490592, guid: 832d6fd450248af47a8908e1f10c4f4a,

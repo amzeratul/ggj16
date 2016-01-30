@@ -14,6 +14,21 @@ public class FadeUI : MonoBehaviour {
         _img = GetComponent<Image>();
     }
 
+    public delegate void OnHalfwayThroughCrossfade();
+    public void CrossFade(float time, OnHalfwayThroughCrossfade callback = null) {
+        StartCoroutine(DoCrossFade(time, callback));
+    }
+
+    private IEnumerator DoCrossFade(float time, OnHalfwayThroughCrossfade callback) {
+        FadeOut(time * 0.45f);
+        yield return new WaitForSeconds(time * 0.5f);
+        if (callback != null) {
+            callback();
+        }
+        yield return new WaitForSeconds(time * 0.05f);
+        FadeIn(time * 0.45f);
+    }
+
     public void FadeIn(float time) {
         DoFade(0, time);
     }

@@ -10,11 +10,7 @@ public class SessionProgress : MonoBehaviour {
     private float _time;
     private bool _running;
 
-    protected void Start() {
-        StartSession();
-    }
-
-    private void StartSession() {
+    public void StartSession() {
         FadeUI.Instance.FadeIn(3);
         _world.Reset();
         _camera.Reset(_sessionLength);

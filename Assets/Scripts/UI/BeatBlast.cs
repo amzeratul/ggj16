@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class BeatBlast : MonoBehaviour {
-    private SpriteRenderer _renderer;
+    private Image _renderer;
 
     protected void Start () {
-	    _renderer = GetComponent<SpriteRenderer>();
+	    _renderer = GetComponent<Image>();
         _renderer.color = new Color(1, 1, 1, 0);
 	}
 	

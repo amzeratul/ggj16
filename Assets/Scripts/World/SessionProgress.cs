@@ -11,7 +11,6 @@ public class SessionProgress : MonoBehaviour {
     private bool _running;
 
     public void StartSession() {
-        FadeUI.Instance.FadeIn(3);
         _world.Reset();
         _camera.Reset(_sessionLength);
         _rhythm.StartRunning();

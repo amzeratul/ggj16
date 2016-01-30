@@ -15,6 +15,7 @@ public class SessionProgress : MonoBehaviour {
     }
 
     private void StartSession() {
+        FadeUI.Instance.FadeIn(3);
         _world.Reset();
         _camera.Reset(_sessionLength);
         _rhythm.StartRunning();
@@ -22,11 +23,17 @@ public class SessionProgress : MonoBehaviour {
         _running = true;
     }
 
+    private void EndSession() {
+        _rhythm.StopRunning();
+        FadeUI.Instance.FadeOut(3);
+    }
+
     protected void Update() {
         _time += Time.deltaTime;
         if (_time > _sessionLength && _running) {
             _running = false;
-            _rhythm.StopRunning();
+            EndSession();
         }
     }
+
 }

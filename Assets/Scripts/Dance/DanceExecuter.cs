@@ -61,12 +61,28 @@ public class DanceExecuter : MonoBehaviour, Rhythm.Listener {
     }
     
     private void CheckDanceSequence() {
+        if (_commandHistory.Count == 0) {
+            // Nothing to do here!
+            return;
+        }
+
+        var last = _commandHistory[_commandHistory.Count - 1];
+        if (last.p0 == DanceStep.Fumble || last.p1 == DanceStep.Fumble) {
+            _world.Fumble();
+            ClearHistory();
+            return;
+        }
+
         var bestMatch = _danceLibrary.Where(SequenceMatches).OrderBy(m => m.Steps.Length).LastOrDefault();
         if (bestMatch != null) {
             ExecuteDanceMove(bestMatch);
-            _commandHistory.Clear();
-            _commandHistoryFlip.Clear();
+            ClearHistory();
         }
+    }
+
+    private void ClearHistory() {
+        _commandHistory.Clear();
+        _commandHistoryFlip.Clear();
     }
 
     private void ExecuteDanceMove(DanceMove bestMatch) {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class World : MonoBehaviour {
 
-    private Dictionary<string, int> _variables = new Dictionary<string, int>();
+    private readonly Dictionary<string, int> _variables = new Dictionary<string, int>();
 
     public void IncrementVariable(string variable) {
         int value;
@@ -33,5 +33,9 @@ public class World : MonoBehaviour {
 
     private void OnVariableSet(string variable, int value) {
         // TODO
+    }
+
+    public void Fumble() {
+        // TODO?
     }
 }

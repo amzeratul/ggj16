@@ -165,3 +165,35 @@ InputManager:
     type: 0
     axis: 4
     joyNum: 1
+  - serializedVersion: 3
+    m_Name: Submit
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 100
+    dead: 0.001
+    sensitivity: 100
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 4
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Cancel
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: escape
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 100
+    dead: 0.001
+    sensitivity: 100
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 4
+    joyNum: 1

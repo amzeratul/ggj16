@@ -5,7 +5,7 @@ using System.Text;
 using UnityEngine;
 
 class DanceLibrary : MonoBehaviour {
-    public DanceMove[] Moves;
+    [HideInInspector] public DanceMove[] Moves;
     [SerializeField] public TextAsset _data;
 
     private enum CSVColumns {

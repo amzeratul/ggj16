@@ -37,6 +37,7 @@ class DanceLibrary : MonoBehaviour {
             };
         }
         return new DanceMove {
+            Id = int.Parse(columns[(int) CSVColumns.Id]),
             Description = columns[(int) CSVColumns.EffectDescription],
             Steps = steps,
             Effect = ParseEffect(columns[(int) CSVColumns.Effect]),

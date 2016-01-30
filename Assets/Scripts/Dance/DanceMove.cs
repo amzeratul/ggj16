@@ -5,6 +5,7 @@ using System.Text;
 
 [Serializable]
 public class DanceMove {
+    public int Id;
     public DanceStepPair[] Steps;
     public string Description;
     public EffectType Effect;

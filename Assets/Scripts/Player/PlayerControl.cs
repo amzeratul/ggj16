@@ -102,7 +102,7 @@ public class PlayerControl : MonoBehaviour {
         var startCol = _renderer.color;
         float factor = 1 / _stepLength;
         for (float t = 0; t < 1; t += Time.deltaTime * factor) {
-            float t2 = Smooth(t);
+            float t2 = MathUtil.Smooth(t);
             _renderer.color = Color.Lerp(Color.red, startCol, t2);
             yield return null;
         }
@@ -114,16 +114,12 @@ public class PlayerControl : MonoBehaviour {
         Vector2 endPos = GetScreenPosition(p1);
         float factor = 1 / _stepLength;
         for (float t = 0; t < 1; t += Time.deltaTime * factor) {
-            float t2 = Smooth(t);
+            float t2 = MathUtil.Smooth(t);
             transform.position = Vector2.Lerp(startPos, endPos, t2) + new Vector2(0, height * 4 * t2 * (1 - t2));
             yield return null;
         }
         _position = p1;
         transform.position = endPos;
-    }
-
-    private float Smooth(float t) {
-        return 1.0f - (Mathf.Cos(t * Mathf.PI) * 0.5f + 0.5f);
     }
 
     private static Vector2 GetScreenPosition(int p) {

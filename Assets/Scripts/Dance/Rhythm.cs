@@ -22,14 +22,26 @@ class Rhythm : MonoBehaviour {
 
     private float _musicTime;
     private float _bps;
+    private float _bpm;
     private float _firstBeat;
     private bool _running;
+
+    protected void Awake() {
+        Instance = this;
+    }
+
+    public static Rhythm Instance { get; private set; }
+
+    public float BPM {
+        get { return _bpm; }
+    }
 
     private void PlayMusic(AudioClip music, float delay, float firstBeat, float bpm) {
         _source.Stop();
         _source.volume = 1;
         _source.clip = music;
         _source.PlayDelayed(delay);
+        _bpm = bpm;
         _bps = bpm / 60.0f;
         _musicTime = -delay;
         _firstBeat = firstBeat;

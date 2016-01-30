@@ -8,6 +8,8 @@ public class DanceExecuter : MonoBehaviour {
     [SerializeField] private float _beatLength = 1;
     [SerializeField] private PlayerControl[] _players;
     [SerializeField] private DanceLibrary _lib;
+    [SerializeField] private BeatVisualizer _visualizer;
+
     private float _danceTime;
     private readonly List<DanceStepPair> _commandHistory = new List<DanceStepPair>();
     private readonly List<DanceStepPair> _commandHistoryFlip = new List<DanceStepPair>(); // :)
@@ -26,6 +28,7 @@ public class DanceExecuter : MonoBehaviour {
         if (_danceTime >= _beatLength) {
             _danceTime -= _beatLength;
             Tick();
+            _visualizer.OnDanceTick();
         }
     }
 

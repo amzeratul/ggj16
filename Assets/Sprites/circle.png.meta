@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 8ba1ee5e82f99b64c8af443bdc2c633d
-timeCreated: 1454109025
+guid: cd1bc10aa31797542b0c5c7a730a3a51
+timeCreated: 1454109625
 licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: player_placeholder_0
-    21300002: player_placeholder_1
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -32,7 +30,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -51,33 +49,7 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: player_placeholder_0
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 111
-        width: 39
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-    - name: player_placeholder_1
-      rect:
-        serializedVersion: 2
-        x: 44
-        y: 60
-        width: 40
-        height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -20, y: 17.5}
-        - {x: -20, y: -17.5}
-        - {x: 20, y: -17.5}
-        - {x: 20, y: 17.5}
+    sprites: []
     outline: []
   spritePackingTag: 
   userData: 

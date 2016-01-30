@@ -45,6 +45,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   _lib: {fileID: 11424626}
+  _visualizer: {fileID: 0}
 --- !u!114 &11424626
 MonoBehaviour:
   m_ObjectHideFlags: 1

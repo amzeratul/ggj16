@@ -6,6 +6,7 @@ public class MenuUI : MonoBehaviour {
     public GameObject TitleScreen;
     public GameObject HelpScreen;
     public GameObject GameScreen;
+    public Sprite[] DanceIcons;
 
     public static MenuUI Instance { get; private set; }
 

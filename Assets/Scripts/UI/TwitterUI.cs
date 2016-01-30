@@ -19,7 +19,6 @@ public class TwitterUI : MonoBehaviour {
     }
 
     public void Update() {
-        Application.CaptureScreenshot(Application.temporaryCachePath + "/anuki.jp");
         if (Input.GetKeyDown(KeyCode.T)) {
             //SendScreenshot();
         }

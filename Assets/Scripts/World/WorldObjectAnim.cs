@@ -4,6 +4,7 @@ using System.Collections;
 public class WorldObjectAnim : MonoBehaviour, Rhythm.Listener {
     [SerializeField] private int _beats = 4;
     [SerializeField] private AnimType _animType;
+    [SerializeField] private float _intensity = 1;
 
     private float _bpm;
     private bool _animating;
@@ -43,11 +44,14 @@ public class WorldObjectAnim : MonoBehaviour, Rhythm.Listener {
     }
 
     private void UpdateSwing(float t) {
-        transform.rotation = BaseRotation * Quaternion.AngleAxis(Mathf.Lerp(-10, 10, t), Vector3.forward);
+        float range = 10 * _intensity;
+        transform.rotation = BaseRotation * Quaternion.AngleAxis(Mathf.Lerp(-range, range, t), Vector3.forward);
     }
 
     private void UpdateSquish(float t) {
-        transform.localScale = new Vector3(Mathf.Lerp(0.9f, 1.1f, t), Mathf.Lerp(1.1f, 0.9f, t), 1);
+        float min = 1.0f - 0.1f * _intensity;
+        float max = 1.0f + 0.1f * _intensity;
+        transform.localScale = new Vector3(Mathf.Lerp(min, max, t), Mathf.Lerp(max, min, t), 1);
     }
 
     public void OnTick() {

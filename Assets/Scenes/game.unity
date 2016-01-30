@@ -389,6 +389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _beats: 4
   _animType: 0
+  _intensity: 1
   BaseRotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1001 &1256358399
 Prefab:
@@ -642,6 +643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _beats: 4
   _animType: 1
+  _intensity: 1
   BaseRotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &1839319748 stripped
 MonoBehaviour:
@@ -658,6 +660,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2071623257}
   - 212: {fileID: 2071623256}
+  - 114: {fileID: 2071623258}
   m_Layer: 0
   m_Name: sea00
   m_TagString: Untagged
@@ -707,3 +710,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!114 &2071623258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2071623255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11ce194eb7f2154b8b002afabf1f804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _beats: 8
+  _animType: 0
+  _intensity: 0.2
+  BaseRotation: {x: 0, y: 0, z: 0, w: 1}

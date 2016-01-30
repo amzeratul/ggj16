@@ -29,6 +29,7 @@ public class DanceIcon : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
         for (float t = 0; t < 1; t += Time.deltaTime * 2) {
             _image.color = new Color(1, 1, 1, 1 - t);
+            yield return null;
         }
         _image.color = transparent;
     }

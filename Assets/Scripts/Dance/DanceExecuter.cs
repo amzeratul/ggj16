@@ -133,6 +133,6 @@ public class DanceExecuter : MonoBehaviour, Rhythm.Listener {
     }
 
     private bool ArePlayersFlipped() {
-        return _players[1].transform.position.x < _players[0].transform.position.y;
+        return _players[1].GetPosition() < _players[0].GetPosition();
     }
 }

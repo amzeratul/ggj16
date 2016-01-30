@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
-    private Vector2 _lastInput;
     [SerializeField] private int _playerNumber = 0;
     [SerializeField] private int _joystickNumber = 0;
     [SerializeField] private int _stickNumber = 0;
@@ -27,7 +26,14 @@ public class PlayerControl : MonoBehaviour {
 
     protected void Update () {
 	    SetInput(GetInputStick());
-	}
+    }
+
+    private Vector2 GetInputStick() {
+        var joy = "Joy" + _joystickNumber + " " + (_stickNumber == 0 ? "Left" : "Right");
+        var x = joy + "X";
+        var y = joy + "Y";
+        return new Vector2(Input.GetAxis(x), Input.GetAxis(y));
+    }
 
     public void Init(DanceExecuter dance, int playerNumber) {
         _dance = dance;
@@ -40,26 +46,18 @@ public class PlayerControl : MonoBehaviour {
     }
 
     private void SetInput(Vector2 input) {
-        _lastInput = input;
-    }
-
-    private Vector2 GetInputStick() {
-        var joy = "Joy" + _joystickNumber + " " + (_stickNumber == 0 ? "Left" : "Right");
-        var x = joy + "X";
-        var y = joy + "Y";
-        return new Vector2(Input.GetAxis(x), Input.GetAxis(y));
+        var move = PlayerMoves.Idle;
+        if (input.magnitude > 0.5f) {
+            if (Mathf.Abs(input.x) > Mathf.Abs(input.y)) {
+                move = input.x > 0 ? PlayerMoves.Right : PlayerMoves.Left;
+            } else {
+                move = input.y > 0 ? PlayerMoves.Down : PlayerMoves.Up;
+            }
+        }
+        _myMove = move;
     }
 
     public void OnDanceTick() {
-        var move = PlayerMoves.Idle;
-        if (_lastInput.magnitude > 0.5f) {
-            if (Mathf.Abs(_lastInput.x) > Mathf.Abs(_lastInput.y)) {
-                move = _lastInput.x > 0 ? PlayerMoves.Right : PlayerMoves.Left;
-            } else {
-                move = _lastInput.y > 0 ? PlayerMoves.Down : PlayerMoves.Up;
-            }
-        }
-        _myMove = FilterMove(move);
     }
 
     private PlayerMoves FilterMove(PlayerMoves move) {
@@ -71,7 +69,7 @@ public class PlayerControl : MonoBehaviour {
     }
 
     public PlayerMoves GetMove() {
-        return _myMove;
+        return FilterMove(_myMove);
     }
 
     public void DoMove(PlayerMoves move) {

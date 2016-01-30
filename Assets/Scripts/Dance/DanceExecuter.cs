@@ -3,15 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-public class DanceExecuter : MonoBehaviour {
+public class DanceExecuter : MonoBehaviour, Rhythm.Listener {
 
-    [SerializeField] private float _beatLength = 1;
+    [SerializeField] private Rhythm _rhythm;
     [SerializeField] private PlayerControl[] _players;
     [SerializeField] private DanceLibrary _lib;
     [SerializeField] private BeatVisualizer _visualizer;
 
-    private float _danceTime = 0;
-    private int _warmUpTicks = 2;
     private readonly List<DanceStepPair> _commandHistory = new List<DanceStepPair>();
     private readonly List<DanceStepPair> _commandHistoryFlip = new List<DanceStepPair>(); // :)
     private DanceMove[] _danceLibrary;
@@ -22,22 +20,10 @@ public class DanceExecuter : MonoBehaviour {
             p.Init(this, i++);
         }
         _danceLibrary = _lib.Moves;
+        _rhythm.Register(this);
     }
-
-    protected void Update() {
-        _danceTime += Time.deltaTime;
-        if (_danceTime >= _beatLength) {
-            _danceTime -= _beatLength;
-            _visualizer.OnDanceTick(_warmUpTicks > 0);
-            if (_warmUpTicks > 0) {
-                _warmUpTicks--;
-            } else {
-                Tick();
-            }
-        }
-    }
-
-    private void Tick() {
+    
+    public void OnTick() {
         int i = 0;
         var moves = new PlayerControl.PlayerMoves[2];
         foreach (var p in _players) {
@@ -87,13 +73,13 @@ public class DanceExecuter : MonoBehaviour {
         var bestMatch = _danceLibrary.Where(SequenceMatches).OrderBy(m => m.Steps.Length).LastOrDefault();
         if (bestMatch != null) {
             ExecuteDanceMove(bestMatch);
+            _commandHistory.Clear();
+            _commandHistoryFlip.Clear();
         }
     }
 
     private void ExecuteDanceMove(DanceMove bestMatch) {
         Debug.Log("Executing move: " + bestMatch);
-        _commandHistory.Clear();
-        _commandHistoryFlip.Clear();
     }
 
     private bool SequenceMatches(DanceMove danceMove) {

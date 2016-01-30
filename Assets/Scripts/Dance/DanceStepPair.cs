@@ -7,11 +7,4 @@ using System.Text;
 public class DanceStepPair {
     public DanceStep p0;
     public DanceStep p1;
-
-    public DanceStepPair Flip() {
-        return new DanceStepPair {
-            p0 = this.p1,
-            p1 = this.p0
-        };
-    }
 }

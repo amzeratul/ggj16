@@ -10,7 +10,8 @@ public class DanceExecuter : MonoBehaviour {
     [SerializeField] private DanceLibrary _lib;
     [SerializeField] private BeatVisualizer _visualizer;
 
-    private float _danceTime;
+    private float _danceTime = 0;
+    private int _warmUpTicks = 2;
     private readonly List<DanceStepPair> _commandHistory = new List<DanceStepPair>();
     private readonly List<DanceStepPair> _commandHistoryFlip = new List<DanceStepPair>(); // :)
     private DanceMove[] _danceLibrary;
@@ -27,8 +28,12 @@ public class DanceExecuter : MonoBehaviour {
         _danceTime += Time.deltaTime;
         if (_danceTime >= _beatLength) {
             _danceTime -= _beatLength;
-            Tick();
-            _visualizer.OnDanceTick();
+            _visualizer.OnDanceTick(_warmUpTicks > 0);
+            if (_warmUpTicks > 0) {
+                _warmUpTicks--;
+            } else {
+                Tick();
+            }
         }
     }
 
@@ -39,19 +44,23 @@ public class DanceExecuter : MonoBehaviour {
             p.OnDanceTick();
             moves[i++] = p.GetMove();
         }
+
         ProcessMoves(moves);
     }
 
     private void ProcessMoves(PlayerControl.PlayerMoves[] moves) {
         bool flip = ArePlayersFlipped();
+        
+        var dist = Mathf.Abs(_players[0].GetPosition() - _players[1].GetPosition());
+        var p0 = GetDanceStep(moves[0], moves[1], flip, dist);
+        var p1 = GetDanceStep(moves[1], moves[0], !flip, dist);
+        // Jesus christ special cases :(
+        if ((p0 == DanceStep.Away && p1 == DanceStep.Away && dist > 1) || (p0 == DanceStep.Close && p1 == DanceStep.Close && dist < 3)) {
+            p0 = p1 = DanceStep.Fumble;
+        }
 
-        var move = new DanceStepPair {
-            p0 = GetDanceStep(moves[0], moves[1], flip),
-            p1 = GetDanceStep(moves[1], moves[0], !flip)
-        };
-
-        _commandHistory.Add(move);
-        _commandHistoryFlip.Add(move.Flip());
+        _commandHistory.Add(new DanceStepPair { p0 = p0, p1 = p1 });
+        _commandHistoryFlip.Add(new DanceStepPair { p0 = p1, p1 = p0 });
 
         if (_commandHistory.Count > 10) {
             _commandHistory.RemoveAt(0);
@@ -59,6 +68,19 @@ public class DanceExecuter : MonoBehaviour {
         }
 
         CheckDanceSequence();
+
+        _players[0].DoMove(p0 == DanceStep.Fumble ? PlayerControl.PlayerMoves.Fumble : moves[0]);
+        _players[1].DoMove(p1 == DanceStep.Fumble ? PlayerControl.PlayerMoves.Fumble : moves[1]);
+    }
+
+    private int PositionAfter(int startPos, PlayerControl.PlayerMoves move) {
+        if (move == PlayerControl.PlayerMoves.Left) {
+            return startPos - 1;
+        }
+        if (move == PlayerControl.PlayerMoves.Right) {
+            return startPos + 1;
+        }
+        return startPos;
     }
 
     private void CheckDanceSequence() {
@@ -90,7 +112,7 @@ public class DanceExecuter : MonoBehaviour {
         return (pair0.p0 == pair1.p0) && (pair0.p1 == pair1.p1);
     }
 
-    private DanceStep GetDanceStep(PlayerControl.PlayerMoves move, PlayerControl.PlayerMoves otherMove, bool flip) {
+    private DanceStep GetDanceStep(PlayerControl.PlayerMoves move, PlayerControl.PlayerMoves otherMove, bool flip, int distance) {
         if (move == otherMove) {
             switch (move) {
                 case PlayerControl.PlayerMoves.Left:
@@ -106,12 +128,22 @@ public class DanceExecuter : MonoBehaviour {
             case PlayerControl.PlayerMoves.Up:
                 return DanceStep.Up;
             case PlayerControl.PlayerMoves.Left:
-                return flip ? DanceStep.Close : DanceStep.Away;
+                return flip ? TryClose(distance) : TryAway(distance);
             case PlayerControl.PlayerMoves.Right:
-                return flip ? DanceStep.Away : DanceStep.Close;
+                return flip ? TryAway(distance) : TryClose(distance);
+            case PlayerControl.PlayerMoves.Fumble:
+                return DanceStep.Fumble;
         }
 
         return DanceStep.Idle;
+    }
+
+    private static DanceStep TryClose(int distance) {
+        return distance > 1 ? DanceStep.Close : DanceStep.Fumble;
+    }
+
+    private static DanceStep TryAway(int distance) {
+        return distance < 3 ? DanceStep.Away : DanceStep.Fumble;
     }
 
     private bool ArePlayersFlipped() {

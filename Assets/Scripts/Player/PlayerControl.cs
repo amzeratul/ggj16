@@ -8,15 +8,23 @@ public class PlayerControl : MonoBehaviour {
     [SerializeField] private int _stickNumber = 0;
     private DanceExecuter _dance;
     private PlayerMoves _myMove;
+    private int _position;
+    private int _moveRange = 5;
+    private SpriteRenderer _renderer;
 
     public enum PlayerMoves {
         Idle,
         Left,
         Right,
         Up,
-        Down
+        Down,
+        Fumble
     }
-    
+
+    protected void Awake() {
+        _renderer = GetComponentInChildren<SpriteRenderer>();
+    }
+
     protected void Update () {
 	    SetInput(GetInputStick());
 	}
@@ -27,6 +35,8 @@ public class PlayerControl : MonoBehaviour {
         if (playerNumber == 1) {
             _stickNumber = 1;
         }
+        _position = _playerNumber * 2 - 1;
+        transform.position = GetScreenPosition(_position);
     }
 
     private void SetInput(Vector2 input) {
@@ -37,7 +47,7 @@ public class PlayerControl : MonoBehaviour {
         var joy = "Joy" + _joystickNumber + " " + (_stickNumber == 0 ? "Left" : "Right");
         var x = joy + "X";
         var y = joy + "Y";
-        return new Vector2(Input.GetAxisRaw(x), Input.GetAxisRaw(y));
+        return new Vector2(Input.GetAxis(x), Input.GetAxis(y));
     }
 
     public void OnDanceTick() {
@@ -49,41 +59,77 @@ public class PlayerControl : MonoBehaviour {
                 move = _lastInput.y > 0 ? PlayerMoves.Down : PlayerMoves.Up;
             }
         }
-        DoMove(move);
+        _myMove = FilterMove(move);
     }
 
-    private void DoMove(PlayerMoves move) {
+    private PlayerMoves FilterMove(PlayerMoves move) {
+        if ((move == PlayerMoves.Left && _position <= -_moveRange) || (move == PlayerMoves.Right && _position >= _moveRange)) {
+            return PlayerMoves.Idle;
+        }
+
+        return move;
+    }
+
+    public PlayerMoves GetMove() {
+        return _myMove;
+    }
+
+    public void DoMove(PlayerMoves move) {
         switch (move) {
         case PlayerMoves.Down:
-            StartCoroutine(Jump(0, 0));
+            StartCoroutine(Jump(_position, _position, -0.2f));
             break;
         case PlayerMoves.Up:
-            StartCoroutine(Jump(0, 1f));
+            StartCoroutine(Jump(_position, _position, 1f));
             break;
         case PlayerMoves.Left:
-            StartCoroutine(Jump(-1, 0.5f));
+            StartCoroutine(Jump(_position, _position - 1, 0.3f));
             break;
         case PlayerMoves.Right:
-            StartCoroutine(Jump(1, 0.5f));
+            StartCoroutine(Jump(_position, _position + 1, 0.3f));
             break;
-        default:
+        case PlayerMoves.Fumble:
+            StartCoroutine(Fumble());
             break;
         }
         _myMove = move;
     }
 
-    private IEnumerator Jump(float deltaX, float height) {
-        Vector2 startPos = transform.position;
-        float length = 0.4f;
-        float factor = 1 / length;
+    private const float _stepLength = 0.4f;
+
+    private IEnumerator Fumble() {
+        var startCol = _renderer.color;
+        float factor = 1 / _stepLength;
         for (float t = 0; t < 1; t += Time.deltaTime * factor) {
-            transform.position = startPos + new Vector2(deltaX * t, height * 4 * t * (1 - t));
+            float t2 = Smooth(t);
+            _renderer.color = Color.Lerp(Color.red, startCol, t2);
             yield return null;
         }
-        transform.position = startPos + new Vector2(deltaX, 0);
+        _renderer.color = startCol;
     }
 
-    public PlayerMoves GetMove() {
-        return _myMove;
+    private IEnumerator Jump(int p0, int p1, float height) {
+        Vector2 startPos = GetScreenPosition(p0);
+        Vector2 endPos = GetScreenPosition(p1);
+        float factor = 1 / _stepLength;
+        for (float t = 0; t < 1; t += Time.deltaTime * factor) {
+            float t2 = Smooth(t);
+            transform.position = Vector2.Lerp(startPos, endPos, t2) + new Vector2(0, height * 4 * t2 * (1 - t2));
+            yield return null;
+        }
+        _position = p1;
+        transform.position = endPos;
+    }
+
+    private float Smooth(float t) {
+        return 1.0f - (Mathf.Cos(t * Mathf.PI) * 0.5f + 0.5f);
+    }
+
+    private static Vector2 GetScreenPosition(int p) {
+        return new Vector2(p * 0.75f, -2.5f);
+    }
+
+    public int GetPosition() {
+        return _position;
     }
 }

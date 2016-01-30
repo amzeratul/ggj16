@@ -11,5 +11,6 @@ public enum DanceStep {
     TandemRight,
     Up,
     Down,
-    Idle
+    Idle,
+    Fumble
 }

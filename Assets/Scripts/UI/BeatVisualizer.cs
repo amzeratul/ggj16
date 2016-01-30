@@ -14,8 +14,12 @@ public class BeatVisualizer : MonoBehaviour {
 	    
 	}
 
-    public void OnDanceTick() {
-        _blast.Activate();
+    public void OnDanceTick(bool warmUp) {
+        if (!warmUp) {
+            _blast.Activate();
+        }
+
+        // Scrolling beat
         var go = (GameObject) Instantiate(_beatOriginal, _beatOriginal.transform.position, Quaternion.identity);
         go.transform.SetParent(transform);
         go.transform.localPosition = new Vector3(4, 0, 0);

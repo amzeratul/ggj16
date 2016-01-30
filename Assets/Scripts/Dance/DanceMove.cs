@@ -7,4 +7,9 @@ using System.Text;
 public class DanceMove {
     public DanceStepPair[] Steps;
     public string Description;
+    public EffectType Effect;
+    public IsAvailableType IsAvailable;
+
+    public delegate void EffectType(World world);
+    public delegate bool IsAvailableType(World world);
 }

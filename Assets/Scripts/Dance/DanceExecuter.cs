@@ -9,6 +9,7 @@ public class DanceExecuter : MonoBehaviour, Rhythm.Listener {
     [SerializeField] private PlayerControl[] _players;
     [SerializeField] private DanceLibrary _lib;
     [SerializeField] private BeatVisualizer _visualizer;
+    [SerializeField] private World _world;
 
     private readonly List<DanceStepPair> _commandHistory = new List<DanceStepPair>();
     private readonly List<DanceStepPair> _commandHistoryFlip = new List<DanceStepPair>(); // :)
@@ -70,6 +71,7 @@ public class DanceExecuter : MonoBehaviour, Rhythm.Listener {
 
     private void ExecuteDanceMove(DanceMove bestMatch) {
         Debug.Log("Executing move: " + bestMatch.Description);
+        bestMatch.Effect(_world);
     }
 
     private bool SequenceMatches(DanceMove danceMove) {
@@ -78,6 +80,10 @@ public class DanceExecuter : MonoBehaviour, Rhythm.Listener {
         }
 
         if (danceMove.Steps.Length > _commandHistory.Count) {
+            return false;
+        }
+
+        if (!danceMove.IsAvailable(_world)) {
             return false;
         }
 

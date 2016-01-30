@@ -8,6 +8,15 @@ class DanceLibrary : MonoBehaviour {
     public DanceMove[] Moves;
     [SerializeField] public TextAsset _data;
 
+    private enum CSVColumns {
+        Id,
+        EffectDescription,
+        Effect,
+        Require,
+        P1Sequence,
+        P2Sequence
+    }
+
     protected void Awake() {
         Moves = new DanceMove[0];
         var lines = _data.text.Split('\n');
@@ -17,8 +26,8 @@ class DanceLibrary : MonoBehaviour {
     private DanceMove ParseLine(string line) {
         // TODO: will fail if any entry has a comma in it
         var columns = line.Split(',');
-        var p0 = ParseStepList(columns[3]);
-        var p1 = ParseStepList(columns[4]);
+        var p0 = ParseStepList(columns[(int) CSVColumns.P1Sequence]);
+        var p1 = ParseStepList(columns[(int) CSVColumns.P2Sequence]);
         int n = p0.Length;
         var steps = new DanceStepPair[n];
         for (int i = 0; i < n; i++) {
@@ -28,9 +37,38 @@ class DanceLibrary : MonoBehaviour {
             };
         }
         return new DanceMove {
-            Description = columns[1],
-            Steps = steps
+            Description = columns[(int) CSVColumns.EffectDescription],
+            Steps = steps,
+            Effect = ParseEffect(columns[(int) CSVColumns.Effect]),
+            IsAvailable = ParseRequirement(columns[(int) CSVColumns.Require])
         };
+    }
+
+    private DanceMove.EffectType ParseEffect(string val) {
+        var words = val.Split(' ');
+
+        if (words[0] == "inc") {
+            string var = words[1];
+            return world => world.IncrementVariable(var);
+        }
+
+        if (words[0] == "add") {
+            string obj = words[1];
+            int variation = int.Parse(words[2]);
+            return world => world.AddObject(obj, variation);
+        }
+
+        throw new Exception("Unknown effect: " + val);
+    }
+
+    private DanceMove.IsAvailableType ParseRequirement(string val) {
+        if (string.IsNullOrEmpty(val)) {
+            return (world) => true;
+        }
+        var words = val.Split(' ');
+        string variable = words[0];
+        int value = int.Parse(words[1]);
+        return (world) => world.GetVariable(variable) >= value;
     }
 
     private static string[] ParseStepList(string val) {

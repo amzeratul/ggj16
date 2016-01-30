@@ -54,7 +54,7 @@ public class PlayerControl : MonoBehaviour {
             if (Mathf.Abs(input.x) > Mathf.Abs(input.y)) {
                 move = input.x > 0 ? PlayerMoves.Right : PlayerMoves.Left;
             } else {
-                move = input.y > 0 ? PlayerMoves.Down : PlayerMoves.Up;
+                move = input.y > 0 ? PlayerMoves.Up : PlayerMoves.Down;
             }
         }
         _myMove = move;

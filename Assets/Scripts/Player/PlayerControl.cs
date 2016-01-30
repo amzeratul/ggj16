@@ -44,7 +44,7 @@ public class PlayerControl : MonoBehaviour {
         _position = _playerNumber * 2 - 1;
         transform.position = GetScreenPosition(_position);
         if (_playerNumber == 1) {
-            _renderer.color = new Color(0.3f, 0.8f, 0.6f);
+            _renderer.flipX = true;
         }
     }
 
@@ -127,7 +127,7 @@ public class PlayerControl : MonoBehaviour {
     }
 
     private static Vector2 GetScreenPosition(int p) {
-        return new Vector2(p * 0.75f, -2.5f);
+        return new Vector2(p * 1, -2.5f);
     }
 
     public int GetPosition() {

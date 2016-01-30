@@ -167,6 +167,7 @@ MonoBehaviour:
   _lib: {fileID: 11424626}
   _visualizer: {fileID: 0}
   _world: {fileID: 11421764}
+  _icon: {fileID: 0}
 --- !u!114 &11421764
 MonoBehaviour:
   m_ObjectHideFlags: 1

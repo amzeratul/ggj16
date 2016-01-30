@@ -10,6 +10,7 @@ public class DanceExecuter : MonoBehaviour, Rhythm.Listener {
     [SerializeField] private DanceLibrary _lib;
     [SerializeField] private BeatVisualizer _visualizer;
     [SerializeField] private World _world;
+    [SerializeField] private DanceIcon _icon;
 
     private readonly List<DanceStepPair> _commandHistory = new List<DanceStepPair>();
     private readonly List<DanceStepPair> _commandHistoryFlip = new List<DanceStepPair>(); // :)
@@ -86,7 +87,7 @@ public class DanceExecuter : MonoBehaviour, Rhythm.Listener {
     }
 
     private void ExecuteDanceMove(DanceMove bestMatch) {
-        Debug.Log("Executing move: " + bestMatch.Description);
+        _icon.ShowDanceIcon(bestMatch.Id);
         bestMatch.Effect(_world);
     }
 

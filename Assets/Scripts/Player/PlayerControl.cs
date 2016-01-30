@@ -10,6 +10,8 @@ public class PlayerControl : MonoBehaviour {
     private int _position;
     private int _moveRange = 5;
     private SpriteRenderer _renderer;
+    private Animator _animator;
+    private bool _flipped;
 
     public enum PlayerMoves {
         Idle,
@@ -22,6 +24,7 @@ public class PlayerControl : MonoBehaviour {
 
     protected void Awake() {
         _renderer = GetComponentInChildren<SpriteRenderer>();
+        _animator = GetComponentInChildren<Animator>();
     }
 
     protected void Update () {
@@ -44,7 +47,8 @@ public class PlayerControl : MonoBehaviour {
         _position = _playerNumber * 2 - 1;
         transform.position = GetScreenPosition(_position);
         if (_playerNumber == 1) {
-            _renderer.flipX = true;
+            _flipped = true;
+            _renderer.flipX = _flipped;
         }
     }
 
@@ -78,18 +82,23 @@ public class PlayerControl : MonoBehaviour {
     public void DoMove(PlayerMoves move) {
         switch (move) {
         case PlayerMoves.Down:
-            StartCoroutine(Jump(_position, _position, -0.2f));
+            _animator.SetTrigger("down");
+            StartCoroutine(Jump(_position, _position, 0));
             break;
         case PlayerMoves.Up:
+            _animator.SetTrigger("jump");
             StartCoroutine(Jump(_position, _position, 1f));
             break;
         case PlayerMoves.Left:
+            _animator.SetTrigger(_flipped ? "forward" : "back");
             StartCoroutine(Jump(_position, _position - 1, 0.3f));
             break;
         case PlayerMoves.Right:
+            _animator.SetTrigger(_flipped ? "back" : "forward");
             StartCoroutine(Jump(_position, _position + 1, 0.3f));
             break;
         case PlayerMoves.Fumble:
+            _animator.SetTrigger("fumble");
             StartCoroutine(Fumble());
             break;
         }

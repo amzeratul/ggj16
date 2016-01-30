@@ -1,0 +1,236 @@
+fileFormatVersion: 2
+guid: ab20bc182779b2a4494a0f64b6c8cb21
+timeCreated: 1454192119
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: anu_left_5x1_0
+    21300002: anu_left_5x1_1
+    21300004: anu_left_5x1_2
+    21300006: anu_left_5x1_3
+    21300008: anu_left_5x1_4
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: anu_left_5x1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 364
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 100, y: 31}
+        - {x: 110, y: 60}
+        - {x: 110, y: 130}
+        - {x: 94, y: 179}
+        - {x: 86, y: 197}
+        - {x: 42, y: 197}
+        - {x: -11, y: 185}
+        - {x: -40, y: 197}
+        - {x: -55, y: 197}
+        - {x: -111, y: 36}
+        - {x: -140, y: 72}
+        - {x: -156, y: 74}
+        - {x: -161, y: 61}
+        - {x: -161, y: 44}
+        - {x: -156, y: 28}
+        - {x: -128, y: -3}
+        - {x: -119, y: -7}
+        - {x: -102, y: -11}
+        - {x: -136, y: -57}
+        - {x: -143, y: -71}
+        - {x: -118, y: -194}
+        - {x: -87, y: -194}
+        - {x: -53, y: -164}
+        - {x: 13, y: -194}
+        - {x: 64, y: -194}
+        - {x: 76, y: -115}
+        - {x: 53, y: 8}
+    - name: anu_left_5x1_1
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 0
+        width: 370
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 93, y: -106}
+        - {x: 125, y: 77}
+        - {x: 125, y: 96}
+        - {x: 107, y: 115}
+        - {x: 99, y: 213}
+        - {x: -10, y: 213}
+        - {x: -42, y: 148}
+        - {x: -37, y: 48}
+        - {x: -72, y: 76}
+        - {x: -83, y: 142}
+        - {x: -99, y: 137}
+        - {x: -117, y: 119}
+        - {x: -121, y: 63}
+        - {x: -121, y: 49}
+        - {x: -87, y: -7}
+        - {x: -119, y: -58}
+        - {x: -121, y: -63}
+        - {x: -121, y: -78}
+        - {x: -97, y: -102}
+        - {x: -60, y: -194}
+        - {x: -34, y: -194}
+        - {x: -29, y: -183}
+        - {x: -11, y: -180}
+        - {x: 24, y: -165}
+    - name: anu_left_5x1_2
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 0
+        width: 384
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 74, y: 16}
+        - {x: 110, y: 21}
+        - {x: 141, y: 54}
+        - {x: 141, y: 80}
+        - {x: 118, y: 129}
+        - {x: 130, y: 195}
+        - {x: 93, y: 201}
+        - {x: 70, y: 217}
+        - {x: 35, y: 217}
+        - {x: -2, y: 172}
+        - {x: -23, y: 68}
+        - {x: -84, y: 98}
+        - {x: -111, y: 156}
+        - {x: -121, y: 158}
+        - {x: -131, y: 158}
+        - {x: -131, y: 105}
+        - {x: -107, y: 30}
+        - {x: -108, y: -102}
+        - {x: -27, y: -194}
+        - {x: 12, y: -194}
+        - {x: 11, y: -140}
+        - {x: 87, y: -122}
+        - {x: 112, y: -81}
+    - name: anu_left_5x1_3
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 0
+        width: 374
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 131, y: 40}
+        - {x: 131, y: 90}
+        - {x: 108, y: 185}
+        - {x: 71, y: 191}
+        - {x: 59, y: 204}
+        - {x: 14, y: 204}
+        - {x: -20, y: 181}
+        - {x: -35, y: 42}
+        - {x: -120, y: 133}
+        - {x: -128, y: 143}
+        - {x: -133, y: 147}
+        - {x: -146, y: 140}
+        - {x: -146, y: 105}
+        - {x: -126, y: 46}
+        - {x: -75, y: 1}
+        - {x: -112, y: -66}
+        - {x: -118, y: -107}
+        - {x: -74, y: -194}
+        - {x: 32, y: -194}
+        - {x: 26, y: -165}
+        - {x: 106, y: -113}
+        - {x: 64, y: -5}
+    - name: anu_left_5x1_4
+      rect:
+        serializedVersion: 2
+        x: 1489
+        y: 0
+        width: 363
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 129.5, y: 54}
+        - {x: 129.5, y: 110}
+        - {x: 104.5, y: 203}
+        - {x: 83.5, y: 208}
+        - {x: 23.5, y: 199}
+        - {x: 9.5, y: 210}
+        - {x: -7.5, y: 210}
+        - {x: -36.5, y: 145}
+        - {x: -29.5, y: 54}
+        - {x: -60.5, y: 72}
+        - {x: -120.5, y: 156}
+        - {x: -134.5, y: 141}
+        - {x: -134.5, y: 77}
+        - {x: -130.5, y: 46}
+        - {x: -82.5, y: -1}
+        - {x: -126.5, y: -96}
+        - {x: -50.5, y: -135}
+        - {x: -81.5, y: -195}
+        - {x: 16.5, y: -195}
+        - {x: 18.5, y: -193}
+        - {x: 61.5, y: -130}
+        - {x: 103.5, y: -105}
+        - {x: 67.5, y: -3}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

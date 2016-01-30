@@ -1,0 +1,192 @@
+fileFormatVersion: 2
+guid: d7d06022678653542bd3eb45fb338f94
+timeCreated: 1454191699
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: anu_jump01_4x1_0
+    21300002: anu_jump01_4x1_1
+    21300004: anu_jump01_4x1_2
+    21300006: anu_jump01_4x1_3
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: anu_jump01_4x1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 361
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 112.5, y: 42}
+        - {x: 107.5, y: 51}
+        - {x: 61.5, y: 65}
+        - {x: 107.5, y: 128}
+        - {x: 99.5, y: 165}
+        - {x: 55.5, y: 255}
+        - {x: 34.5, y: 255}
+        - {x: -18.5, y: 212}
+        - {x: -76.5, y: 237}
+        - {x: -88.5, y: 230}
+        - {x: -80.5, y: 157}
+        - {x: -51.5, y: 78}
+        - {x: -53.5, y: 21}
+        - {x: -105.5, y: -45}
+        - {x: -130.5, y: -50}
+        - {x: -130.5, y: -82}
+        - {x: -123.5, y: -99}
+        - {x: -114.5, y: -116}
+        - {x: -72.5, y: -131}
+        - {x: -44.5, y: -137}
+        - {x: 19.5, y: -137}
+        - {x: 69.5, y: -122}
+        - {x: 87.5, y: -33}
+        - {x: 112.5, y: 13}
+    - name: anu_jump01_4x1_1
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 0
+        width: 357
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 65.5, y: 49}
+        - {x: 114.5, y: 83}
+        - {x: 114.5, y: 139}
+        - {x: 94.5, y: 157}
+        - {x: 85.5, y: 220}
+        - {x: 75.5, y: 237}
+        - {x: 43.5, y: 237}
+        - {x: -46.5, y: 222}
+        - {x: -59.5, y: 222}
+        - {x: -63.5, y: 164}
+        - {x: -38.5, y: 69}
+        - {x: -127.5, y: -26}
+        - {x: -128.5, y: -28}
+        - {x: -128.5, y: -44}
+        - {x: -87.5, y: -92}
+        - {x: -81.5, y: -120}
+        - {x: -61.5, y: -165}
+        - {x: -29.5, y: -165}
+        - {x: -9.5, y: -162}
+        - {x: 43.5, y: -126}
+        - {x: 77.5, y: -113}
+        - {x: 82.5, y: -26}
+    - name: anu_jump01_4x1_2
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 0
+        width: 391
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 135.5, y: 23}
+        - {x: 135.5, y: 63}
+        - {x: 131.5, y: 69}
+        - {x: 103.5, y: 155}
+        - {x: 83.5, y: 183}
+        - {x: 63.5, y: 183}
+        - {x: 23.5, y: 125}
+        - {x: -5.5, y: 159}
+        - {x: -44.5, y: 176}
+        - {x: -51.5, y: 129}
+        - {x: -15.5, y: 21}
+        - {x: -130.5, y: -32}
+        - {x: -130.5, y: -78}
+        - {x: -36.5, y: -148}
+        - {x: -40.5, y: -192}
+        - {x: -37.5, y: -195}
+        - {x: 21.5, y: -195}
+        - {x: 46.5, y: -169}
+        - {x: 98.5, y: -139}
+        - {x: 78.5, y: -45}
+    - name: anu_jump01_4x1_3
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 0
+        width: 401
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 51.5, y: -2}
+        - {x: 82.5, y: 14}
+        - {x: 124.5, y: 46}
+        - {x: 112.5, y: 91}
+        - {x: 126.5, y: 128}
+        - {x: 126.5, y: 179}
+        - {x: 48.5, y: 171}
+        - {x: 39.5, y: 201}
+        - {x: 35.5, y: 204}
+        - {x: 2.5, y: 204}
+        - {x: -47.5, y: 148}
+        - {x: -104.5, y: -6}
+        - {x: -147.5, y: -46}
+        - {x: -147.5, y: -62}
+        - {x: -144.5, y: -69}
+        - {x: -117.5, y: -96}
+        - {x: -70.5, y: -128}
+        - {x: -72.5, y: -195}
+        - {x: -5.5, y: -195}
+        - {x: 17.5, y: -156}
+        - {x: 63.5, y: -141}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

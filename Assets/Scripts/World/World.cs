@@ -38,4 +38,8 @@ public class World : MonoBehaviour {
     public void Fumble() {
         // TODO?
     }
+
+    public void Reset() {
+        // TODO
+    }
 }

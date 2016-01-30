@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,13 +23,11 @@ class Rhythm : MonoBehaviour {
     private float _musicTime;
     private float _bps;
     private float _firstBeat;
-
-    protected void Start() {
-        PlayMusic(_music, 2.0f, 0.2f, 120);
-    }
+    private bool _running;
 
     private void PlayMusic(AudioClip music, float delay, float firstBeat, float bpm) {
         _source.Stop();
+        _source.volume = 1;
         _source.clip = music;
         _source.PlayDelayed(delay);
         _bps = bpm / 60.0f;
@@ -37,19 +36,15 @@ class Rhythm : MonoBehaviour {
     }
 
     protected void Update() {
-        _musicTime += Time.deltaTime;
-        /*
-        if (_source.time <= 0) {
+        if (_running) {
             _musicTime += Time.deltaTime;
-        } else {
-            _musicTime = _source.time;
-        }*/
 
-        foreach (var l in _listeners) {
-            int curTick = Mathf.FloorToInt((_musicTime - _firstBeat + l.headsUp) * _bps);
-            if (curTick > l.lastBeat) {
-                l.lastBeat = curTick;
-                l.listener.OnTick();
+            foreach (var l in _listeners) {
+                int curTick = Mathf.FloorToInt((_musicTime - _firstBeat + l.headsUp) * _bps);
+                if (curTick > l.lastBeat) {
+                    l.lastBeat = curTick;
+                    l.listener.OnTick();
+                }
             }
         }
     }
@@ -61,5 +56,25 @@ class Rhythm : MonoBehaviour {
     public void Remove(Listener listener) {
         _listeners.Remove(_listeners.Find(o => o.listener == listener));
     }
-    
+
+    public void StartRunning() {
+        PlayMusic(_music, 2.0f, 0.2f, 120);
+        _running = true;
+    }
+
+    public void StopRunning() {
+        foreach (var l in _listeners) {
+            l.lastBeat = -1;
+        }
+        StartCoroutine(DoStop());
+        _running = false;
+    }
+
+    private IEnumerator DoStop() {
+        for (float t = 0; t < 1; t += Time.deltaTime * 0.25f) {
+            _source.volume = 1 - t;
+            yield return null;
+        }
+        _source.Stop();
+    }
 }

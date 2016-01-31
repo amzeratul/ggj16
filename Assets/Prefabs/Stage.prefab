@@ -102,6 +102,7 @@ MonoBehaviour:
   _world: {fileID: 11421764}
   _camera: {fileID: 0}
   _rhythm: {fileID: 0}
+  _dance: {fileID: 11407588}
   _sessionLength: 120
   _gameUi: {fileID: 0}
   _twitterUi: {fileID: 0}

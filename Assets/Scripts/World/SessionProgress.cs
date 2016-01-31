@@ -6,6 +6,7 @@ public class SessionProgress : MonoBehaviour {
     [SerializeField] private World _world;
     [SerializeField] private WorldCameraProgress _camera;
     [SerializeField] private Rhythm _rhythm;
+    [SerializeField] private DanceExecuter _dance;
     [SerializeField] private float _sessionLength;
     [SerializeField] private InGameUI _gameUi;
     [SerializeField] private TwitterUI _twitterUi;
@@ -22,6 +23,7 @@ public class SessionProgress : MonoBehaviour {
         _world.Reset();
         _camera.Reset(_sessionLength);
         _rhythm.StartRunning();
+        _dance.Reset();
         _time = 0;
         _running = true;
         _gameUi.Reset();
@@ -53,7 +55,7 @@ public class SessionProgress : MonoBehaviour {
         _hasFocus = true;
         _waitingRestart = true;
         _gameUi.ShowDanceMove(null);
-        _gameUi.WaitingRestart();
+        _gameUi.CanRestart = true;
     }
 
     private void TakeScreenshot() {
@@ -69,6 +71,7 @@ public class SessionProgress : MonoBehaviour {
         }
         _screenshot = tex;
         _canTweet = true;
+        _gameUi.CanTweet = true;
     }
 
     protected void Update() {
@@ -83,11 +86,13 @@ public class SessionProgress : MonoBehaviour {
                 _hasFocus = false;
                 _twitterUi.SendScreenshot(_screenshot, success => {
                     _canTweet = !success;
+                    _gameUi.CanTweet = _canTweet;
                     _hasFocus = true;
                 });
             }
             if (Input.GetButtonDown("Submit") && _hasFocus) {
                 _waitingRestart = false;
+                _gameUi.CanRestart = false;
                 Restart();
             }
         }

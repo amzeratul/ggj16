@@ -10,6 +10,10 @@ public class DanceIcon : MonoBehaviour {
         _image.color = new Color(1, 1, 1, 0);
     }
 
+    public void OnEnable() {
+        _image.color = new Color(1, 1, 1, 0);
+    }
+
     public void ShowDanceIcon(int id) {
         _image.sprite = MenuUI.Instance.DanceIcons[id];
         _image.SetNativeSize();

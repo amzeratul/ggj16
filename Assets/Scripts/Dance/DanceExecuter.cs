@@ -17,14 +17,19 @@ public class DanceExecuter : MonoBehaviour, Rhythm.Listener {
     private DanceMove[] _danceLibrary;
     
     protected void Start() {
+        Reset();
+        _danceLibrary = _lib.Moves;
+        _rhythm.Register(this);
+    }
+
+    public void Reset() {
         int i = 0;
         foreach (var p in _players) {
             p.Init(this, i++);
         }
-        _danceLibrary = _lib.Moves;
-        _rhythm.Register(this);
+        ClearHistory();
     }
-    
+
     public void OnTick() {
         int i = 0;
         var moves = new PlayerControl.PlayerMoves[2];

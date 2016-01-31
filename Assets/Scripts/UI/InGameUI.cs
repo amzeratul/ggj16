@@ -5,6 +5,12 @@ public class InGameUI : MonoBehaviour {
 
     [SerializeField] private GameObject _beatArea;
     [SerializeField] private SessionProgress _progress;
+    [SerializeField] private GameObject _restartPad;
+    [SerializeField] private GameObject _tweetPad;
+    [SerializeField] private GameObject _restartIcon;
+
+    public bool CanRestart { get; set; }
+    public bool CanTweet { get; set; }
 
     protected void OnEnable() {
         _progress.StartSession();
@@ -18,8 +24,10 @@ public class InGameUI : MonoBehaviour {
         _beatArea.SetActive(false);
     }
 
-    public void WaitingRestart() {
-        // TODO
+    protected void Update() {
+        _restartPad.SetActive(CanRestart && !CanTweet);
+        _tweetPad.SetActive(CanTweet && CanRestart);
+        _restartIcon.SetActive(CanRestart);
     }
 
     public void ShowDanceMove(DanceMove dance) {

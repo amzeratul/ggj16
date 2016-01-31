@@ -19,13 +19,15 @@ public class World : MonoBehaviour {
         public string Name;
         public float MinHeight;
         public float MaxHeight;
+        public float MinDistance;
         public float MaxDistance;
         public bool AlignWithCore;
 
-        public SpawnSettings(string name, float minHeight, float maxHeight, float maxDistance = 12, bool align = true) {
+        public SpawnSettings(string name, float minHeight, float maxHeight, float minDistance = 0, float maxDistance = 12, bool align = true) {
             Name = name;
             MinHeight = minHeight;
             MaxHeight = maxHeight;
+            MinDistance = minDistance;
             MaxDistance = maxDistance;
             AlignWithCore = align;
         }
@@ -51,13 +53,13 @@ public class World : MonoBehaviour {
         // Initial: 6.5
         // Final: 12
 
-        _objTypes.Add(new SpawnSettings("tree", -4.0f, -2.5f));
+        _objTypes.Add(new SpawnSettings("tree", -4.0f, -2.5f, 4));
         _objTypes.Add(new SpawnSettings("mountain", -2.5f, -2f));
-        _objTypes.Add(new SpawnSettings("bird", -0.5f, 5f));
-        _objTypes.Add(new SpawnSettings("cloud", -0.5f, 5f));
-        _objTypes.Add(new SpawnSettings("flower", -6f, -5f));
-        _objTypes.Add(new SpawnSettings("bush", -6f, -5f));
-        _objTypes.Add(new SpawnSettings("grass", -6f, -5f));
+        _objTypes.Add(new SpawnSettings("bird", 0f, 6f));
+        _objTypes.Add(new SpawnSettings("cloud", 2f, 8f));
+        _objTypes.Add(new SpawnSettings("flower", -7f, -5.5f));
+        _objTypes.Add(new SpawnSettings("bush", -7f, -5.5f, 2));
+        _objTypes.Add(new SpawnSettings("grass", -7f, -5.5f));
         _objTypes.Add(new SpawnSettings("totem", -4.5f, -3f));
         _objTypes.Add(new SpawnSettings("floatingTotem", 3, 5));
         _objTypes.Add(new SpawnSettings("fireflies", -5.5f, -1f));
@@ -117,7 +119,7 @@ public class World : MonoBehaviour {
         var par = _objTypes.First(o => o.Name == objName);
         float coreOffset = -40;
         float height = UnityEngine.Random.Range(par.MinHeight, par.MaxHeight) - coreOffset;
-        float x = UnityEngine.Random.Range(-par.MaxDistance, par.MaxDistance);
+        float x = UnityEngine.Random.Range(par.MinDistance, par.MaxDistance) * (UnityEngine.Random.Range(0, 2) * 2 - 1);
         // height² = x² + y²
         // y = sqrt(height² - x²)
         float y = Mathf.Sqrt(height * height - x * x);

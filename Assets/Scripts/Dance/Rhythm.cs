@@ -104,8 +104,8 @@ class Rhythm : MonoBehaviour {
                     ToggleLayer(i);
                 }
             }
-        }
 #endif
+        }
     }
 
     public void Register(Listener listener, float headsUp = 0) {

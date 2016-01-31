@@ -1,19 +1,14 @@
 
 using System;
-using System.IO;
-using System.Net;
-using System.Xml;
 using System.Collections.Generic;
 using System.Text;
 using System.Collections;
 using System.Text.RegularExpressions;
 using System.Globalization;
 using System.Linq;
-using System.Net;
 using System.Security.Cryptography;
 
 using UnityEngine;
-using UnityEngine.Experimental.Networking;
 
 namespace Twitter
 {

@@ -13,6 +13,8 @@ public class TwitterPinUI : MonoBehaviour {
         _pinInput.text = "";
         gameObject.SetActive(true);
         _callback = onPinEntered;
+        _pinInput.Select();
+        _pinInput.ActivateInputField();
     }
 
     public void OnPin() {

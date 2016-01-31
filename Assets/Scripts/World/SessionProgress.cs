@@ -84,9 +84,12 @@ public class SessionProgress : MonoBehaviour {
         if (_waitingRestart) {
             if (Input.GetButtonDown("Tweet") && _canTweet) {
                 _hasFocus = false;
+                _gameUi.CanRestart = false;
+                _gameUi.CanTweet = false;
                 _twitterUi.SendScreenshot(_screenshot, success => {
                     _canTweet = !success;
                     _gameUi.CanTweet = _canTweet;
+                    _gameUi.CanRestart = true;
                     _hasFocus = true;
                 });
             }

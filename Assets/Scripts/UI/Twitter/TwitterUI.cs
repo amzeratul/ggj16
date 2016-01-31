@@ -181,6 +181,7 @@ public class TwitterUI : MonoBehaviour {
         }
 
         _screenshot = null;
+        _resultWindow.ShowResult(success);
     }
 
 }

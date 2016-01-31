@@ -32,8 +32,8 @@ class DanceLibrary : MonoBehaviour {
         var steps = new DanceStepPair[n];
         for (int i = 0; i < n; i++) {
             steps[i] = new DanceStepPair {
-                p0 = ParseStep(p0[i], false),
-                p1 = ParseStep(p1[i], true)
+                p0 = ParseStep(p0[i], p1[i], false),
+                p1 = ParseStep(p1[i], p0[i], true)
             };
         }
         return new DanceMove {
@@ -86,13 +86,13 @@ class DanceLibrary : MonoBehaviour {
         return raw.Split(' ');
     }
 
-    private DanceStep ParseStep(string s, bool flip) {
+    private DanceStep ParseStep(string s, string other, bool flip) {
         var c = s[0];
         switch (c) {
         case '<':
-            return flip ? DanceStep.Close : DanceStep.Away;
+            return other[0] == '<' ? DanceStep.TandemLeft : (flip ? DanceStep.Close : DanceStep.Away);
         case '>':
-            return flip ? DanceStep.Away : DanceStep.Close;
+            return other[0] == '>' ? DanceStep.TandemRight : (flip ? DanceStep.Away : DanceStep.Close);
         case '^':
             return DanceStep.Up;
         case 'v':
@@ -101,10 +101,6 @@ class DanceLibrary : MonoBehaviour {
             return DanceStep.Swap;
         case '.':
             return DanceStep.Idle;
-        case 'l':
-            return DanceStep.TandemLeft;
-        case 'r':
-            return DanceStep.TandemRight;
         }
         throw new Exception("Failed to parse move: \"" + s + "\"");
     }

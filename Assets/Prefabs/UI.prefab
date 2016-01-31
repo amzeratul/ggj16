@@ -2727,7 +2727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7205882, g: 0.47882223, b: 0.31260812, a: 1}
+  m_Color: {r: 1, g: 0.96470594, b: 0.7960785, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2807,8 +2807,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f5f00f7f208fb4ea56f1570b0d85f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActiveCol: {r: 1, g: 1, b: 1, a: 1}
-  InactiveCol: {r: 1, g: 1, b: 1, a: 0.2}
+  ActiveCol: {r: 0.8392157, g: 0.44705883, b: 0.3882353, a: 1}
+  InactiveCol: {r: 0.8470589, g: 0.65882355, b: 0.6313726, a: 0.2}
 --- !u!114 &11462884
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -91,9 +91,10 @@ public class DanceExecuter : MonoBehaviour, Rhythm.Listener {
         _commandHistoryFlip.Clear();
     }
 
-    private void ExecuteDanceMove(DanceMove bestMatch) {
-        _icon.ShowDanceIcon(bestMatch.Id);
-        bestMatch.Effect(_world);
+    private void ExecuteDanceMove(DanceMove dance) {
+        _icon.ShowDanceIcon(dance.Id);
+        DancesExecuted.Instance.ExecuteDance(dance);
+        dance.Effect(_world);
     }
 
     private bool SequenceMatches(DanceMove danceMove) {

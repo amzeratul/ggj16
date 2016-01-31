@@ -55,6 +55,7 @@ public class World : MonoBehaviour {
         _objTypes.Add(new SpawnSettings("cloud", -0.5f, 5f));
         _objTypes.Add(new SpawnSettings("flower", -5.5f, -4.5f));
         _objTypes.Add(new SpawnSettings("bush", -5.5f, -4.5f));
+        _objTypes.Add(new SpawnSettings("grass", -5.5f, -4.5f));
         _objTypes.Add(new SpawnSettings("totem", -4.5f, -3f));
         _objTypes.Add(new SpawnSettings("floatingTotem", 3, 5));
         _objTypes.Add(new SpawnSettings("fireflies", -5.5f, -1f));
@@ -114,6 +115,7 @@ public class World : MonoBehaviour {
         if (par.AlignWithCore) {
             go.transform.rotation = Quaternion.LookRotation(Vector3.forward, new Vector3(x, y, 0).normalized);
         }
+        go.GetComponent<SpriteRenderer>().sortingOrder = -Mathf.FloorToInt((height + coreOffset) * 10);
     }
 
     private void OnVariableSet(string variable, int value) {

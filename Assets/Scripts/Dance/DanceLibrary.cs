@@ -46,6 +46,10 @@ class DanceLibrary : MonoBehaviour {
     }
 
     private DanceMove.EffectType ParseEffect(string val) {
+        if (string.IsNullOrEmpty(val)) {
+            return world => { };
+        }
+
         var words = val.Split(' ');
 
         if (words[0] == "inc") {
@@ -55,8 +59,10 @@ class DanceLibrary : MonoBehaviour {
 
         if (words[0] == "add") {
             string obj = words[1];
-            int variation = int.Parse(words[2]);
-            return world => world.AddObject(obj, variation);
+            string[] vars = words[2].Split('-');
+            int variationMin = int.Parse(vars[0]);
+            int variationMax = vars.Length > 1 ? int.Parse(vars[1]) : variationMin;
+            return world => world.AddObject(obj, UnityEngine.Random.Range(variationMin, variationMax));
         }
 
         throw new Exception("Unknown effect: " + val);

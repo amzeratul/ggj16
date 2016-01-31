@@ -217,7 +217,7 @@ MonoBehaviour:
   _world: {fileID: 11421764}
   _camera: {fileID: 0}
   _rhythm: {fileID: 11401630}
-  _sessionLength: 60
+  _sessionLength: 120
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

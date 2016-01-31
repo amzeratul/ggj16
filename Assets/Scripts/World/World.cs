@@ -119,7 +119,10 @@ public class World : MonoBehaviour {
     }
 
     private void OnVariableSet(string variable, int value) {
-        _variableTargets.First(o => o.Name == variable).Object.SendMessage("OnVariableSet", value, SendMessageOptions.DontRequireReceiver);
+        var target = _variableTargets.FirstOrDefault(o => o.Name == variable);
+        if (target != null) {
+            target.Object.SendMessage("OnVariableSet", value, SendMessageOptions.DontRequireReceiver);
+        }
     }
 
     public void Fumble() {

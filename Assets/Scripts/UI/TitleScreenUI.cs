@@ -35,12 +35,16 @@ public class TitleScreenUI : MonoBehaviour {
     protected void OnEnable() {
         _active = true;
     }
-
-    protected void Update() {
+    
+    public void OnOptionChosen(int option) {
         if (_active) {
-            if (Input.GetButton("Submit")) {
-                _active = false;
+            _active = false;
+            if (option == 0) {
                 MenuUI.Instance.SetScreen(MenuUI.Instance.HelpScreen);
+            } else if (option == 1) {
+                Application.Quit();
+            } else if (option == 2) {
+                MenuUI.Instance.SetScreen(MenuUI.Instance.CreditsScreen);
             }
         }
     }

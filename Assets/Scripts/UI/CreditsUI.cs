@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class CreditsUI : MonoBehaviour {
     private bool _active;
@@ -8,11 +7,14 @@ public class CreditsUI : MonoBehaviour {
         _active = true;
     }
 
-    protected void Update() {
+    public void OnOptionChosen(int option) {
         if (_active) {
-            if (Input.GetButton("Submit")) {
+            if (option == 0) {
                 _active = false;
                 MenuUI.Instance.SetScreen(MenuUI.Instance.TitleScreen);
+            } else {
+                string[] handles = new[] { "infinite_ammo", "bitmOO", "viiolaceus", "amzeratul" };
+                Application.OpenURL("http://twitter.com/" + handles[option -1]);
             }
         }
     }

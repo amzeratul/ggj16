@@ -15,8 +15,8 @@ public class MenuUI : MonoBehaviour {
     }
 
     protected void Start() {
-        SetScreen(HelpScreen, false);
-        FadeUI.Instance.FadeIn(0);
+        SetScreen(TitleScreen, false);
+        FadeUI.Instance.FadeIn(0.5f);
     }
 
     public void SetScreen(GameObject screen, bool fade = true) {

@@ -198,11 +198,11 @@ InputManager:
     axis: 4
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Cancel
+    m_Name: Tweet
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: escape
+    positiveButton: joystick button 3
     altNegativeButton: 
     altPositiveButton: 
     gravity: 100

@@ -9,9 +9,11 @@ using System.Collections;
 using System.Text.RegularExpressions;
 using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Security.Cryptography;
 
 using UnityEngine;
+using UnityEngine.Experimental.Networking;
 
 namespace Twitter
 {
@@ -219,6 +221,46 @@ namespace Twitter
             }
         }
 
+        private const string PostImageTweetURL = "https://api.twitter.com/1.1/statuses/update_with_media.json";
+
+        public static IEnumerator PostImageTweet(string text, byte[] image, string consumerKey, string consumerSecret, AccessTokenResponse response, PostTweetCallback callback) {
+            if (string.IsNullOrEmpty(text) || text.Length > 140) {
+                Debug.Log(string.Format("PostTweet - text[{0}] is empty or too long.", text));
+
+                callback(false);
+            } else if (image == null || image.Length == 0) {
+                Debug.Log("Missing image.");
+
+                callback(false);
+            } else {
+                Dictionary<string, string> parameters = new Dictionary<string, string>();
+                
+                var form = new WWWForm();
+                form.AddBinaryData("status", UTF8Encoding.UTF8.GetBytes(text));
+                form.AddBinaryData("media[]", image, "anuki.jpg", "application/octet-stream");
+                var request = new HTTP.Request(PostImageTweetURL, form);
+                request.headers.Add("Authorization", GetHeaderWithAccessToken("POST", PostImageTweetURL, consumerKey, consumerSecret, response, parameters));
+                yield return request.Send();
+                
+                if (request.exception != null) {
+                    
+                    Debug.Log(string.Format("PostImageTweet - failed:\n" + request.exception.Message));
+                    callback(false);
+                } else {
+                    var txt = request.response.Text;
+                    string error = Regex.Match(txt, @"<error>([^&]+)</error>").Groups[1].Value;
+
+                    if (!string.IsNullOrEmpty(error)) {
+                        Debug.Log(string.Format("PostImageTweet - failed. {0}", error));
+                        callback(false);
+                    } else {
+                        Debug.Log("Response: " + txt);
+                        callback(true);
+                    }
+                }
+            }
+        }
+
         #endregion
 
         #region OAuth Help Methods
@@ -370,6 +412,11 @@ namespace Twitter
             if (string.IsNullOrEmpty(value))
             {
                 return string.Empty;
+            }
+
+            // Hack
+            if (value.Length > 256) {
+                return value;
             }
 
             value = Uri.EscapeDataString(value);

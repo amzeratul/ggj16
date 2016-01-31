@@ -26,4 +26,4 @@ Move id,Effect [Human readable],Effect [Code],Require [Code],Player 1 sequence,P
 24,Add turtle,add turtle 0,ground 2,^ . . . ^,^ . . . ^,missing art,
 25,Add wind,inc wind,,> > . > >,> > . > >,missing art,
 26,Add rain,inc rain,ground 1,< < . < <,< < . < <,missing art,
-27,Add grass #1,add grass 0-1,ground 2,> > <,> > <,done,
+27,Add grass #1,add grass 0-1,ground 2,^ v ^,v ^ v,done,

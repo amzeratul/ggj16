@@ -65,6 +65,7 @@ public class World : MonoBehaviour {
         _objTypes.Add(new SpawnSettings("fireflies", -5.5f, -1f));
         _objTypes.Add(new SpawnSettings("cow", -4f, -2.5f));
         _objTypes.Add(new SpawnSettings("dog", -7f, -5.5f));
+        _objTypes.Add(new SpawnSettings("turtle", -6f, -4.5f));
         _objTypes.Add(new SpawnSettings("rabbit", -7f, -5.5f));
     }
 

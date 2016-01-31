@@ -1,9 +1,12 @@
 fileFormatVersion: 2
 guid: 16ca7b81ceb98a54199655f3db59ae7c
-timeCreated: 1454255847
+timeCreated: 1454256363
 licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: animals_atlas_0
+    21300002: animals_atlas_1
+    21300004: animals_atlas_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +41,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +52,88 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: animals_atlas_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1791
+        width: 454
+        height: 256
+      alignment: 9
+      pivot: {x: 0.49009448, y: 0.12231016}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 219.4971, y: 26.688599}
+        - {x: 219.4971, y: 160.6886}
+        - {x: 216.4971, y: 182.6886}
+        - {x: 105.4971, y: 163.6886}
+        - {x: 58.4971, y: 207.6886}
+        - {x: 26.4971, y: 207.6886}
+        - {x: -20.5029, y: 189.6886}
+        - {x: -164.5029, y: 202.6886}
+        - {x: -209.5029, y: 132.6886}
+        - {x: -214.5029, y: 121.6886}
+        - {x: -214.5029, y: 48.6886}
+        - {x: -211.5029, y: 33.6886}
+        - {x: -195.5029, y: 34.6886}
+        - {x: -182.5029, y: 40.6886}
+        - {x: -187.5029, y: 61.6886}
+        - {x: -183.5029, y: 47.6886}
+        - {x: -180.5029, y: 30.688599}
+        - {x: -172.5029, y: -2.3114014}
+        - {x: -144.5029, y: -25.311401}
+        - {x: -131.5029, y: -29.311401}
+        - {x: -55.5029, y: -29.311401}
+        - {x: -37.5029, y: -18.311401}
+        - {x: -38.5029, y: 18.688599}
+        - {x: 42.4971, y: -29.311401}
+        - {x: 76.4971, y: -29.311401}
+        - {x: 81.4971, y: -27.311401}
+        - {x: 106.4971, y: -29.311401}
+        - {x: 114.4971, y: -29.311401}
+        - {x: 127.4971, y: -27.311401}
+        - {x: 130.4971, y: -17.311401}
+    - name: animals_atlas_1
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 1800
+        width: 166
+        height: 207
+      alignment: 9
+      pivot: {x: 0.50000036, y: 0.16325754}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 53.99994, y: 151.20569}
+        - {x: -20.000061, y: 151.20569}
+        - {x: -59.00006, y: 141.20569}
+        - {x: -71.00006, y: 96.20569}
+        - {x: -71.00006, y: -12.794312}
+        - {x: -55.00006, y: -20.794312}
+        - {x: 55.99994, y: -20.794312}
+        - {x: 61.99994, y: -6.7943115}
+        - {x: 73.99994, y: 33.20569}
+        - {x: 73.99994, y: 134.20569}
+    - name: animals_atlas_2
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 1804
+        width: 135
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5166567, y: 0.19082184}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.748657, y: 111.468506}
+        - {x: -56.748657, y: 31.468506}
+        - {x: -56.748657, y: -13.531494}
+        - {x: -51.748657, y: -21.531494}
+        - {x: 41.251343, y: -21.531494}
+        - {x: 58.251343, y: 24.468506}
+        - {x: 58.251343, y: 82.468506}
+        - {x: 53.251343, y: 111.468506}
     outline: []
   spritePackingTag: 
   userData: 

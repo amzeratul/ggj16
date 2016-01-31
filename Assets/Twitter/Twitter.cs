@@ -248,10 +248,9 @@ namespace Twitter
                     callback(false);
                 } else {
                     var txt = request.response.Text;
-                    string error = Regex.Match(txt, @"<error>([^&]+)</error>").Groups[1].Value;
 
-                    if (!string.IsNullOrEmpty(error)) {
-                        Debug.Log(string.Format("PostImageTweet - failed. {0}", error));
+                    if (txt.Contains("\"errors\":")) {
+                        Debug.Log(string.Format("PostImageTweet - failed. {0}", txt));
                         callback(false);
                     } else {
                         Debug.Log("Response: " + txt);

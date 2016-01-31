@@ -23,6 +23,14 @@ public class TwitterPreviewUI : MonoBehaviour {
         }
     }
 
+    public void OnOK() {
+        OnResult(true);
+    }
+
+    public void OnCancel() {
+        OnResult(false);
+    }
+
     private void OnResult(bool confirm) {
         _callback(confirm);
         gameObject.SetActive(false);

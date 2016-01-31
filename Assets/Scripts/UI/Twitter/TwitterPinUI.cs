@@ -18,5 +18,12 @@ public class TwitterPinUI : MonoBehaviour {
     public void OnPin() {
         _callback(_pinInput.text);
         gameObject.SetActive(false);
+        _pinInput.text = "";
+    }
+
+    public void OnCancel() {
+        _callback(null);
+        gameObject.SetActive(false);
+        _pinInput.text = "";
     }
 }

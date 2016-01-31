@@ -66,8 +66,12 @@ public class TwitterUI : MonoBehaviour {
     }
 
     private void OnPinEntered(string pin) {
-        ShowLoading();
-        StartCoroutine(Twitter.API.GetAccessToken(_apiKey, _zomgSekratThing, _requestTokenResponse.Token, pin.Trim(), OnAccessTokenCallback));
+        if (pin == null) {
+            OnResult(false);
+        } else {
+            ShowLoading();
+            StartCoroutine(Twitter.API.GetAccessToken(_apiKey, _zomgSekratThing, _requestTokenResponse.Token, pin.Trim(), OnAccessTokenCallback));
+        }
     }
 
     private void RequestToken() {
@@ -99,6 +103,15 @@ public class TwitterUI : MonoBehaviour {
             Print(log);
             _gotToken = true;
         }
+    }
+
+    private void RevokeToken() {
+        _accessTokenResponse = new Twitter.AccessTokenResponse();
+        PlayerPrefs.DeleteKey(PLAYER_PREFS_TWITTER_USER_ID);
+        PlayerPrefs.DeleteKey(PLAYER_PREFS_TWITTER_USER_SCREEN_NAME);
+        PlayerPrefs.DeleteKey(PLAYER_PREFS_TWITTER_USER_TOKEN);
+        PlayerPrefs.DeleteKey(PLAYER_PREFS_TWITTER_USER_TOKEN_SECRET);
+        _gotToken = false;
     }
 
     void OnRequestTokenCallback(bool success, Twitter.RequestTokenResponse response) {
@@ -148,6 +161,9 @@ public class TwitterUI : MonoBehaviour {
     }
 
     private void OnPostTweet(bool success) {
+        if (!success) {
+            RevokeToken();
+        }
         OnResult(success);
     }
 

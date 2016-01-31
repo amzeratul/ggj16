@@ -40,8 +40,8 @@ public class SessionProgress : MonoBehaviour {
     private IEnumerator DoRestart() {
         FadeUI.Instance.FadeOut(3);
         yield return new WaitForSeconds(3.5f);
-        StartSession();
-        FadeUI.Instance.FadeIn(2);
+        MenuUI.Instance.SetScreen(MenuUI.Instance.TitleScreen, false);
+        FadeUI.Instance.FadeIn(1);
     }
 
     private IEnumerator DoEndSession() {

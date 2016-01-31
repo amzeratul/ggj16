@@ -49,13 +49,13 @@ public class World : MonoBehaviour {
         // Initial: 6.5
         // Final: 12
 
-        _objTypes.Add(new SpawnSettings("tree", -4.5f, -3f));
+        _objTypes.Add(new SpawnSettings("tree", -4.0f, -2.5f));
         _objTypes.Add(new SpawnSettings("mountain", -2.5f, -2f));
         _objTypes.Add(new SpawnSettings("bird", -0.5f, 5f));
         _objTypes.Add(new SpawnSettings("cloud", -0.5f, 5f));
-        _objTypes.Add(new SpawnSettings("flower", -5.5f, -4.5f));
-        _objTypes.Add(new SpawnSettings("bush", -5.5f, -4.5f));
-        _objTypes.Add(new SpawnSettings("grass", -5.5f, -4.5f));
+        _objTypes.Add(new SpawnSettings("flower", -6f, -5f));
+        _objTypes.Add(new SpawnSettings("bush", -6f, -5f));
+        _objTypes.Add(new SpawnSettings("grass", -6f, -5f));
         _objTypes.Add(new SpawnSettings("totem", -4.5f, -3f));
         _objTypes.Add(new SpawnSettings("floatingTotem", 3, 5));
         _objTypes.Add(new SpawnSettings("fireflies", -5.5f, -1f));

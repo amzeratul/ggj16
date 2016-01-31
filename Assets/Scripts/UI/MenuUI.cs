@@ -5,6 +5,7 @@ public class MenuUI : MonoBehaviour {
 
     public GameObject TitleScreen;
     public GameObject HelpScreen;
+    public GameObject CreditsScreen;
     public GameObject GameScreen;
     public Sprite[] DanceIcons;
 
@@ -30,6 +31,7 @@ public class MenuUI : MonoBehaviour {
     private void DoSetScreen(GameObject screen) {
         var allScreens = new[] {
             TitleScreen,
+            CreditsScreen,
             HelpScreen,
             GameScreen
         };

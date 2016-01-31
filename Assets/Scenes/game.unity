@@ -252,6 +252,10 @@ Prefab:
       propertyPath: _icon
       value: 
       objectReference: {fileID: 1805428480}
+    - target: {fileID: 11438622, guid: f1609200efa7ecd498b12bb0db0a07e9, type: 2}
+      propertyPath: _sessionLength
+      value: 120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1609200efa7ecd498b12bb0db0a07e9, type: 2}
   m_IsPrefabParent: 0

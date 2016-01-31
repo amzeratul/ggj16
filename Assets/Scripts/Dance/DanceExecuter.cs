@@ -104,7 +104,7 @@ public class DanceExecuter : MonoBehaviour, Rhythm.Listener {
             return false;
         }
 
-        return ExactSequenceMatches(danceMove, _commandHistory) || ExactSequenceMatches(danceMove, _commandHistory);
+        return ExactSequenceMatches(danceMove, _commandHistory) || ExactSequenceMatches(danceMove, _commandHistoryFlip);
     }
 
     private bool ExactSequenceMatches(DanceMove danceMove, List<DanceStepPair> history) {

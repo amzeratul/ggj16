@@ -1,9 +1,14 @@
 fileFormatVersion: 2
 guid: 0055b86507aa44b4c8bdf7b13c84a0a5
-timeCreated: 1454198886
+timeCreated: 1454201552
 licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: weather_atlas_0
+    21300002: weather_atlas_1
+    21300004: weather_atlas_2
+    21300006: weather_atlas_3
+    21300008: weather_atlas_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +35,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +43,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +54,188 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: weather_atlas_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1735
+        width: 292
+        height: 301
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 130, y: -27.5}
+        - {x: 130, y: 19.5}
+        - {x: 124, y: 53.5}
+        - {x: 111, y: 74.5}
+        - {x: 75, y: 112.5}
+        - {x: 61, y: 117.5}
+        - {x: 25, y: 129.5}
+        - {x: -7, y: 129.5}
+        - {x: -41, y: 122.5}
+        - {x: -96, y: 92.5}
+        - {x: -104, y: 84.5}
+        - {x: -129, y: 41.5}
+        - {x: -132, y: 24.5}
+        - {x: -132, y: -23.5}
+        - {x: -131, y: -49.5}
+        - {x: -120, y: -76.5}
+        - {x: -85, y: -114.5}
+        - {x: -50, y: -127.5}
+        - {x: 8, y: -127.5}
+        - {x: 72, y: -105.5}
+        - {x: 111, y: -73.5}
+        - {x: 126, y: -46.5}
+    - name: weather_atlas_1
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 1739
+        width: 265
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 90.5, y: -2}
+        - {x: -17.5, y: 60}
+        - {x: 28.5, y: 129}
+        - {x: 24.5, y: 140}
+        - {x: 8.5, y: 140}
+        - {x: -59.5, y: 124}
+        - {x: -85.5, y: 100}
+        - {x: -132.5, y: -9}
+        - {x: -132.5, y: -50}
+        - {x: -89.5, y: -102}
+        - {x: -48.5, y: -130}
+        - {x: 27.5, y: -130}
+        - {x: 115.5, y: -102}
+        - {x: 115.5, y: 1}
+        - {x: 105.5, y: 15}
+    - name: weather_atlas_2
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 1640
+        width: 692
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 223, y: -118.5}
+        - {x: 256, y: -100.5}
+        - {x: 283, y: -75.5}
+        - {x: 337, y: -45.5}
+        - {x: 337, y: -37.5}
+        - {x: 327, y: -30.5}
+        - {x: 257, y: -3.5}
+        - {x: 266, y: 34.5}
+        - {x: 243, y: 76.5}
+        - {x: 224, y: 85.5}
+        - {x: 139, y: 90.5}
+        - {x: 97, y: 70.5}
+        - {x: 87, y: 57.5}
+        - {x: 77, y: 39.5}
+        - {x: 79, y: 7.5}
+        - {x: 59, y: 17.5}
+        - {x: 49, y: 21.5}
+        - {x: 26, y: 19.5}
+        - {x: 43, y: 46.5}
+        - {x: 36, y: 72.5}
+        - {x: 20, y: 84.5}
+        - {x: -19, y: 88.5}
+        - {x: -34, y: 129.5}
+        - {x: -76, y: 131.5}
+        - {x: -102, y: 126.5}
+        - {x: -136, y: 180.5}
+        - {x: -148, y: 189.5}
+        - {x: -178, y: 189.5}
+        - {x: -226, y: 158.5}
+        - {x: -228, y: 102.5}
+        - {x: -232, y: 71.5}
+        - {x: -287, y: 45.5}
+        - {x: -304, y: 15.5}
+        - {x: -300, y: -11.5}
+        - {x: -326, y: -14.5}
+        - {x: -331, y: -51.5}
+        - {x: -340, y: -65.5}
+        - {x: -340, y: -78.5}
+        - {x: -302, y: -83.5}
+        - {x: -301, y: -103.5}
+        - {x: -293, y: -113.5}
+        - {x: -255, y: -134.5}
+        - {x: -229, y: -147.5}
+        - {x: -203, y: -146.5}
+        - {x: -170, y: -122.5}
+        - {x: -151, y: -144.5}
+        - {x: -143, y: -152.5}
+        - {x: -93, y: -145.5}
+        - {x: -62, y: -165.5}
+        - {x: -26, y: -171.5}
+        - {x: 20, y: -171.5}
+        - {x: 61, y: -156.5}
+        - {x: 89, y: -147.5}
+        - {x: 152, y: -141.5}
+    - name: weather_atlas_3
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 1728
+        width: 467
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 217.5, y: -41.5}
+        - {x: 160.5, y: -13.5}
+        - {x: 110.5, y: 13.5}
+        - {x: 70.5, y: 34.5}
+        - {x: 70.5, y: 93.5}
+        - {x: 38.5, y: 107.5}
+        - {x: -83.5, y: 107.5}
+        - {x: -130.5, y: 66.5}
+        - {x: -217.5, y: -18.5}
+        - {x: -217.5, y: -35.5}
+        - {x: -194.5, y: -69.5}
+        - {x: -149.5, y: -70.5}
+        - {x: -104.5, y: -61.5}
+        - {x: -59.5, y: -76.5}
+        - {x: -26.5, y: -100.5}
+        - {x: 55.5, y: -100.5}
+        - {x: 84.5, y: -88.5}
+        - {x: 205.5, y: -62.5}
+        - {x: 217.5, y: -52.5}
+    - name: weather_atlas_4
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1510
+        width: 380
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 171, y: -38}
+        - {x: 160, y: -33}
+        - {x: 143, y: -16}
+        - {x: 104, y: 64}
+        - {x: -15, y: 72}
+        - {x: -49, y: 110}
+        - {x: -91, y: 110}
+        - {x: -176, y: 32}
+        - {x: -176, y: -40}
+        - {x: -163, y: -64}
+        - {x: -152, y: -63}
+        - {x: -118, y: -85}
+        - {x: 84, y: -85}
+        - {x: 145, y: -79}
+        - {x: 175, y: -50}
+        - {x: 175, y: -41}
     outline: []
   spritePackingTag: 
   userData: 

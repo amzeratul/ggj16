@@ -42,6 +42,12 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Sky
+    uniqueID: 3326125559
+    locked: 0
+  - name: Celestial
+    uniqueID: 2683241839
+    locked: 0
+  - name: Clouds
     uniqueID: 2370105413
     locked: 0
   - name: Far background

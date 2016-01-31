@@ -70,7 +70,7 @@ class Rhythm : MonoBehaviour {
     }
 
     public void StartRunning() {
-        PlayMusic(_music, 2.0f, 0.2f, 120);
+        PlayMusic(_music, 2.0f, 0.2f, 90);
         _running = true;
     }
 

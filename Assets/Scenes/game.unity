@@ -334,6 +334,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11446954, guid: f633aedde2dc84b41a94b8470c05d724, type: 2}
+      propertyPath: _danceLibrary
+      value: 
+      objectReference: {fileID: 970678786}
     - target: {fileID: 11482126, guid: f633aedde2dc84b41a94b8470c05d724, type: 2}
       propertyPath: _rhythm
       value: 
@@ -342,22 +346,6 @@ Prefab:
       propertyPath: _progress
       value: 
       objectReference: {fileID: 157464407}
-    - target: {fileID: 22450536, guid: f633aedde2dc84b41a94b8470c05d724, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 22491696, guid: f633aedde2dc84b41a94b8470c05d724, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 22483798, guid: f633aedde2dc84b41a94b8470c05d724, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22416054, guid: f633aedde2dc84b41a94b8470c05d724, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f633aedde2dc84b41a94b8470c05d724, type: 2}
   m_IsPrefabParent: 0
@@ -413,6 +401,27 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 113706, guid: 68749061ba699b1419553d3d93107c71, type: 2}
   m_PrefabInternal: {fileID: 1737556727}
+--- !u!1 &970678783 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 124738, guid: f1609200efa7ecd498b12bb0db0a07e9, type: 2}
+  m_PrefabInternal: {fileID: 377335259}
+--- !u!114 &970678784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 970678783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af3551e49e949ce49b31cf9392ae15a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &970678786 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11424626, guid: f1609200efa7ecd498b12bb0db0a07e9,
+    type: 2}
+  m_PrefabInternal: {fileID: 377335259}
+  m_Script: {fileID: 11500000, guid: 5c7616b2fcb84c54f9d9205ba50447da, type: 3}
 --- !u!114 &1104336278 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11423438, guid: f633aedde2dc84b41a94b8470c05d724,

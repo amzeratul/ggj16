@@ -2807,6 +2807,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f5f00f7f208fb4ea56f1570b0d85f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActiveCol: {r: 1, g: 1, b: 1, a: 1}
+  InactiveCol: {r: 1, g: 1, b: 1, a: 0.2}
 --- !u!114 &11462884
 MonoBehaviour:
   m_ObjectHideFlags: 1

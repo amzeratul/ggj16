@@ -3,6 +3,9 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class DanceIconOnTitle : MonoBehaviour {
+    public Color ActiveCol = new Color(1, 1, 1, 1);
+    public Color InactiveCol = new Color(1, 1, 1, 0.2f);
+
     private float _time;
     private RectTransform _transform;
     private Vector3 _startPos;
@@ -24,13 +27,13 @@ public class DanceIconOnTitle : MonoBehaviour {
         var render = GetComponent<Image>();
         render.sprite = danceIcon;
         _danceId = move.Id;
-        render.color = new Color(1, 1, 1, DancesExecuted.Instance.HasExecutedDance(move.Id) ? 1 : 0.2f);
+        render.color = DancesExecuted.Instance.HasExecutedDance(_danceId) ? ActiveCol : InactiveCol;
     }
 
     protected void OnEnable() {
         if (_setup) {
             var render = GetComponent<Image>();
-            render.color = new Color(1, 1, 1, DancesExecuted.Instance.HasExecutedDance(_danceId) ? 1 : 0.2f);
+            render.color = DancesExecuted.Instance.HasExecutedDance(_danceId) ? ActiveCol : InactiveCol;
         }
     }
 }

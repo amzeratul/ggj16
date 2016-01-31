@@ -17,6 +17,9 @@ public class UpgradeableWorldBit : MonoBehaviour {
                 o.SetActive(false);
             }
         }
+        if (_objects[0] != null) {
+            _objects[0].SetActive(true);
+        }
     }
 
     public void OnVariableSet(int level) {

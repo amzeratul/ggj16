@@ -286,6 +286,10 @@ Prefab:
       propertyPath: _rhythm
       value: 
       objectReference: {fileID: 1836191306}
+    - target: {fileID: 11438622, guid: f1609200efa7ecd498b12bb0db0a07e9, type: 2}
+      propertyPath: _gameUi
+      value: 
+      objectReference: {fileID: 1306795687}
     - target: {fileID: 11421764, guid: f1609200efa7ecd498b12bb0db0a07e9, type: 2}
       propertyPath: _variableTargets.Array.data[0].Object
       value: 
@@ -397,6 +401,12 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 113706, guid: 68749061ba699b1419553d3d93107c71, type: 2}
   m_PrefabInternal: {fileID: 1737556727}
+--- !u!114 &1306795687 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11436520, guid: f633aedde2dc84b41a94b8470c05d724,
+    type: 2}
+  m_PrefabInternal: {fileID: 178394931}
+  m_Script: {fileID: 11500000, guid: 2466de6dec50f8340b1046ba92a2c5b9, type: 3}
 --- !u!1001 &1334133873
 Prefab:
   m_ObjectHideFlags: 0

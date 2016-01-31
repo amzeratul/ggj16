@@ -17,6 +17,7 @@ public class WorldCameraProgress : MonoBehaviour {
     }
 
     public void Reset(float sessionLength) {
+        _time = 0;
         _length = sessionLength;
     }
 }

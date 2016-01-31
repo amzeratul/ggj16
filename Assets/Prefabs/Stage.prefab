@@ -103,6 +103,8 @@ MonoBehaviour:
   _camera: {fileID: 0}
   _rhythm: {fileID: 0}
   _sessionLength: 120
+  _gameUi: {fileID: 0}
+  Screenshot: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

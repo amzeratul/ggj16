@@ -136,15 +136,17 @@ public class World : MonoBehaviour {
             target.Object.SendMessage("OnVariableSet", value, SendMessageOptions.DontRequireReceiver);
         }
 
-        if (variable == "ground" || variable == "mountain") {
-            float volume = Mathf.Clamp(GetVariable("ground"), 0, 3) * 0.2f + Mathf.Clamp(GetVariable("mountain"), 0, 4) * 0.1f;
-            _rhythm.FadeLayerTowards(1, Mathf.Clamp01(volume));
-        }
-        if (variable == "moon") {
-            _rhythm.FadeLayerTowards(3, Mathf.Clamp01(value / 3.0f));
-        }
-        if (variable == "sun") {
-            _rhythm.FadeLayerTowards(4, Mathf.Clamp01(value / 3.0f));
+        if (value > 0) {
+            if (variable == "ground" || variable == "mountain") {
+                float volume = Mathf.Clamp(GetVariable("ground"), 0, 3) * 0.2f + Mathf.Clamp(GetVariable("mountain"), 0, 4) * 0.1f;
+                _rhythm.FadeLayerTowards(1, Mathf.Clamp01(volume));
+            }
+            if (variable == "moon") {
+                _rhythm.FadeLayerTowards(3, Mathf.Clamp01(value / 3.0f));
+            }
+            if (variable == "sun") {
+                _rhythm.FadeLayerTowards(4, Mathf.Clamp01(value / 3.0f));
+            }
         }
     }
 

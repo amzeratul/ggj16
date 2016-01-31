@@ -184,6 +184,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 480512}
   - 212: {fileID: 21249406}
+  - 114: {fileID: 11400456}
   m_Layer: 0
   m_Name: mountainsetc_atlas_2
   m_TagString: Untagged
@@ -200,6 +201,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 460784}
   - 212: {fileID: 21251944}
+  - 114: {fileID: 11449098}
   m_Layer: 0
   m_Name: mountainsetc_atlas_1
   m_TagString: Untagged
@@ -265,6 +267,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 425680}
   - 212: {fileID: 21251640}
+  - 114: {fileID: 11420832}
   m_Layer: 0
   m_Name: mountainsetc_atlas_2 (1)
   m_TagString: Untagged
@@ -297,6 +300,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 413362}
   - 212: {fileID: 21272736}
+  - 114: {fileID: 11492746}
   m_Layer: 0
   m_Name: mountainsetc_atlas_0
   m_TagString: Untagged
@@ -550,6 +554,21 @@ Transform:
   - {fileID: 433476}
   m_Father: {fileID: 468072}
   m_RootOrder: 2
+--- !u!114 &11400456
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11ce194eb7f2154b8b002afabf1f804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _beats: 4
+  _animType: 1
+  _intensity: 0.1
+  BaseRotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &11403432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -561,12 +580,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b024c0ec68cb7a64d90fa5db0fa2efae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 159356}
+  _target: {fileID: 113676}
   _positions:
-  - {x: -6.1, y: -7.75}
+  - {x: -6.1, y: -9}
   - {x: -4.2, y: -1.7}
   - {x: -2.3, y: 2.4}
   - {x: -1, y: 5}
+--- !u!114 &11420832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11ce194eb7f2154b8b002afabf1f804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _beats: 4
+  _animType: 1
+  _intensity: 0.1
+  BaseRotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &11449098
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11ce194eb7f2154b8b002afabf1f804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _beats: 4
+  _animType: 1
+  _intensity: 0.1
+  BaseRotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &11456796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -610,7 +659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 104900}
   _positions:
-  - {x: 6.1, y: -7.75}
+  - {x: 6.1, y: -9}
   - {x: 5, y: -1.7}
   - {x: 2.26, y: 2.11}
   - {x: 0, y: 5.5}
@@ -645,6 +694,21 @@ MonoBehaviour:
   - {fileID: 100286}
   - {fileID: 188244}
   _incremental: 0
+--- !u!114 &11492746
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11ce194eb7f2154b8b002afabf1f804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _beats: 4
+  _animType: 1
+  _intensity: 0.1
+  BaseRotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &11498216
 MonoBehaviour:
   m_ObjectHideFlags: 1

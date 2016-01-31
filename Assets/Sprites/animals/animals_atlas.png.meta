@@ -1,12 +1,13 @@
 fileFormatVersion: 2
 guid: 16ca7b81ceb98a54199655f3db59ae7c
-timeCreated: 1454256363
+timeCreated: 1454261942
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
     21300000: animals_atlas_0
     21300002: animals_atlas_1
     21300004: animals_atlas_2
+    21300006: animals_atlas_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -134,6 +135,25 @@ TextureImporter:
         - {x: 58.251343, y: 24.468506}
         - {x: 58.251343, y: 82.468506}
         - {x: 53.251343, y: 111.468506}
+    - name: animals_atlas_3
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 1807
+        width: 106
+        height: 85
+      alignment: 9
+      pivot: {x: 0.5212126, y: 0.341277}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.2485352, y: 38.991455}
+        - {x: -44.248535, y: 11.991455}
+        - {x: -44.248535, y: -8.008545}
+        - {x: -28.248535, y: -23.008545}
+        - {x: 17.751465, y: -23.008545}
+        - {x: 33.751465, y: -21.008545}
+        - {x: 42.751465, y: 14.991455}
+        - {x: 42.751465, y: 38.991455}
     outline: []
   spritePackingTag: 
   userData: 

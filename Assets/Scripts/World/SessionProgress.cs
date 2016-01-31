@@ -8,11 +8,15 @@ public class SessionProgress : MonoBehaviour {
     [SerializeField] private Rhythm _rhythm;
     [SerializeField] private float _sessionLength;
     [SerializeField] private InGameUI _gameUi;
-    public Texture2D Screenshot;
+    [SerializeField] private TwitterUI _twitterUi;
+    [SerializeField] public Texture2D _screenshot;
+
     private float _time;
     private bool _running;
     private bool _waitingRestart;
     private bool _waitingScreenshot;
+    private bool _hasFocus;
+    private bool _canTweet;
 
     public void StartSession() {
         _world.Reset();
@@ -42,20 +46,29 @@ public class SessionProgress : MonoBehaviour {
         _rhythm.StopRunning();
         _gameUi.EndOfMatch();
         yield return null;
-        _waitingScreenshot = true;
-        while (_waitingScreenshot) {
-            yield return null;
-        }
+        
+        yield return new WaitForEndOfFrame();
+        TakeScreenshot();
+
+        _hasFocus = true;
         _waitingRestart = true;
         _gameUi.ShowDanceMove(null);
         _gameUi.WaitingRestart();
     }
 
     private void TakeScreenshot() {
-        Texture2D tex = new Texture2D(Screen.width, Screen.height);
+        int w = Screen.width;
+        int h = Screen.height;
+        Texture2D tex = new Texture2D(w, h);
         tex.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
         tex.Apply();
-        Screenshot = tex;
+
+        int maxW = 1280;
+        if (w > maxW) {
+            TextureScale.Bilinear(tex, maxW, h * maxW / w);
+        }
+        _screenshot = tex;
+        _canTweet = true;
     }
 
     protected void Update() {
@@ -66,7 +79,14 @@ public class SessionProgress : MonoBehaviour {
         }
 
         if (_waitingRestart) {
-            if (Input.GetButtonDown("Submit")) {
+            if (Input.GetButtonDown("Tweet") && _canTweet) {
+                _hasFocus = false;
+                _twitterUi.SendScreenshot(_screenshot, success => {
+                    _canTweet = !success;
+                    _hasFocus = true;
+                });
+            }
+            if (Input.GetButtonDown("Submit") && _hasFocus) {
                 _waitingRestart = false;
                 Restart();
             }

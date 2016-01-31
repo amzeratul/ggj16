@@ -1,0 +1,23 @@
+
+FAQ 1: CROSSDOMAIN.XML AND WEB PLAYER PROBLEMS?
+-----------------------------------------------
+NB: To use UniWeb in the Web Player, you must have a server running on
+the host which supplies a crossdomain.xml file. See: http://bit.ly/h6QY0M
+
+
+FAQ 2: How do I enable Charles / Fiddler proxy debugging?
+---------------------------------------------------------
+If the proxy is not automatically picked up by .NET (a common issue), you can
+force the proxy to be used by setting:
+
+    HTTP.Request.proxy = new Uri("http://127.0.0.1:8888");
+
+before you make a request.
+
+
+FAQ 3: How do I do a GET/PUT/POST/DELETE/HEAD request?
+------------------------------------------------------
+Just change the first argument of the request constructor, eg:
+
+var request = new HTTP.Request("HEAD", url);
+

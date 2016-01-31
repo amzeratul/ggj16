@@ -11,7 +11,6 @@ public class PlayerControl : MonoBehaviour {
     private int _moveRange = 5;
     private SpriteRenderer _renderer;
     private Animator _animator;
-    private bool _flipped;
     private bool _altStick;
 
     public enum PlayerMoves {
@@ -23,6 +22,8 @@ public class PlayerControl : MonoBehaviour {
         Fumble
     }
 
+    public bool Flipped { get; set; }
+
     protected void Awake() {
         foreach (var s in _sprites) {
             s.SetActive(false);
@@ -31,6 +32,7 @@ public class PlayerControl : MonoBehaviour {
 
     protected void Update () {
 	    SetInput(GetInputStick());
+        _renderer.flipX = Flipped;
     }
 
     private Vector2 GetInputStick() {
@@ -105,11 +107,11 @@ public class PlayerControl : MonoBehaviour {
             StartCoroutine(Jump(_position, _position, 1f));
             break;
         case PlayerMoves.Left:
-            _animator.SetTrigger(_flipped ? "forward" : "back");
+            _animator.SetTrigger(Flipped ? "forward" : "back");
             StartCoroutine(Jump(_position, _position - 1, 0.3f));
             break;
         case PlayerMoves.Right:
-            _animator.SetTrigger(_flipped ? "back" : "forward");
+            _animator.SetTrigger(Flipped ? "back" : "forward");
             StartCoroutine(Jump(_position, _position + 1, 0.3f));
             break;
         case PlayerMoves.Fumble:

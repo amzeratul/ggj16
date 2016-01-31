@@ -1,9 +1,14 @@
 fileFormatVersion: 2
 guid: e95924bcb16f26844a422033fec9ece6
-timeCreated: 1454254431
+timeCreated: 1454262713
 licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: anu_right_5x1_0
+    21300002: anu_right_5x1_1
+    21300004: anu_right_5x1_2
+    21300006: anu_right_5x1_3
+    21300008: anu_right_5x1_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +35,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +43,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +54,174 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: anu_right_5x1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 346
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 57, y: -194}
+        - {x: 61, y: -190}
+        - {x: 59, y: -184}
+        - {x: 79, y: -121}
+        - {x: 116, y: 50}
+        - {x: 119, y: 65}
+        - {x: 119, y: 111}
+        - {x: 100, y: 197}
+        - {x: 75, y: 197}
+        - {x: 20, y: 166}
+        - {x: -18, y: 197}
+        - {x: -43, y: 197}
+        - {x: -66, y: 129}
+        - {x: -71, y: 30}
+        - {x: -129, y: -59}
+        - {x: -129, y: -108}
+        - {x: -113, y: -177}
+        - {x: -108, y: -188}
+        - {x: -103, y: -194}
+        - {x: -84, y: -194}
+        - {x: -78, y: -192}
+        - {x: -36, y: -135}
+        - {x: 29, y: -193}
+        - {x: 49, y: -194}
+    - name: anu_right_5x1_1
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 0
+        width: 386
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 124, y: 56}
+        - {x: 124, y: 137}
+        - {x: 95, y: 209}
+        - {x: 73, y: 209}
+        - {x: 22, y: 190}
+        - {x: -16, y: 209}
+        - {x: -42, y: 209}
+        - {x: -45, y: 205}
+        - {x: -39, y: 69}
+        - {x: -131, y: -41}
+        - {x: -131, y: -77}
+        - {x: -125, y: -83}
+        - {x: -78, y: -123}
+        - {x: -93, y: -174}
+        - {x: -85, y: -178}
+        - {x: -62, y: -172}
+        - {x: -38, y: -155}
+        - {x: -30, y: -146}
+        - {x: -11, y: -191}
+        - {x: -4, y: -194}
+        - {x: 22, y: -194}
+        - {x: 28, y: -140}
+        - {x: 73, y: -117}
+        - {x: 78, y: 3}
+    - name: anu_right_5x1_2
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 0
+        width: 350
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 140, y: 53}
+        - {x: 140, y: 123}
+        - {x: 116, y: 187}
+        - {x: 94, y: 216}
+        - {x: 51, y: 220}
+        - {x: 17, y: 220}
+        - {x: 13, y: 215}
+        - {x: 9, y: 204}
+        - {x: -4, y: 145}
+        - {x: -23, y: 68}
+        - {x: -23, y: 61}
+        - {x: -50, y: 38}
+        - {x: -55, y: 29}
+        - {x: -131, y: -48}
+        - {x: -131, y: -105}
+        - {x: -73, y: -196}
+        - {x: -23, y: -196}
+        - {x: 7, y: -183}
+        - {x: 71, y: -124}
+        - {x: 61, y: -9}
+        - {x: 114, y: 18}
+    - name: anu_right_5x1_3
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 0
+        width: 406
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 47, y: -142}
+        - {x: 85, y: -127}
+        - {x: 63, y: -38}
+        - {x: 70, y: 1}
+        - {x: 128, y: 41}
+        - {x: 128, y: 83}
+        - {x: 94, y: 180}
+        - {x: 67, y: 204}
+        - {x: 45, y: 204}
+        - {x: 23, y: 189}
+        - {x: 4, y: 204}
+        - {x: -23, y: 204}
+        - {x: -34, y: 197}
+        - {x: -35, y: 51}
+        - {x: -127, y: -62}
+        - {x: -127, y: -95}
+        - {x: -104, y: -125}
+        - {x: -71, y: -182}
+        - {x: -64, y: -194}
+        - {x: 40, y: -194}
+        - {x: 44, y: -190}
+        - {x: 45, y: -186}
+    - name: anu_right_5x1_4
+      rect:
+        serializedVersion: 2
+        x: 1509
+        y: 0
+        width: 355
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 102.5, y: 49}
+        - {x: 112.5, y: 63}
+        - {x: 112.5, y: 100}
+        - {x: 91.5, y: 161}
+        - {x: 75.5, y: 213}
+        - {x: 55.5, y: 213}
+        - {x: 2.5, y: 181}
+        - {x: -40.5, y: 213}
+        - {x: -44.5, y: 213}
+        - {x: -65.5, y: 204}
+        - {x: -43.5, y: 88}
+        - {x: -70.5, y: 21}
+        - {x: -127.5, y: -65}
+        - {x: -127.5, y: -89}
+        - {x: -78.5, y: -127}
+        - {x: -76.5, y: -177}
+        - {x: -42.5, y: -194}
+        - {x: -4.5, y: -194}
+        - {x: 74.5, y: -120}
+        - {x: 87.5, y: -97}
+        - {x: 52.5, y: -24}
     outline: []
   spritePackingTag: 
   userData: 

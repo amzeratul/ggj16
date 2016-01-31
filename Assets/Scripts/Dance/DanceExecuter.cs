@@ -22,6 +22,12 @@ public class DanceExecuter : MonoBehaviour, Rhythm.Listener {
         _rhythm.Register(this);
     }
 
+    protected void Update() {
+        foreach (var p in _players) {
+            p.Flipped = ArePlayersFlipped();
+        }
+    }
+
     public void Reset() {
         int i = 0;
         foreach (var p in _players) {

@@ -157,7 +157,7 @@ public class TwitterUI : MonoBehaviour {
     private void TryToSendScreenshot() {
         ShowLoading();
         var data = _screenshot.EncodeToJPG(80);
-        StartCoroutine(Twitter.API.PostImageTweet("My world at Anu & Ki http://globalgamejam.org/2016/games/anu-ki #ggj16 #anuki", data, _apiKey, _zomgSekratThing, _accessTokenResponse, OnPostTweet));
+        StartCoroutine(Twitter.API.PostImageTweet("My world at Anu & Ki http://globalgamejam.org/2016/games/anu-ki #ggj16 #anuandki", data, _apiKey, _zomgSekratThing, _accessTokenResponse, OnPostTweet));
     }
 
     private void OnPostTweet(bool success) {

@@ -8,6 +8,9 @@ public class InGameUI : MonoBehaviour {
     [SerializeField] private GameObject _restartPad;
     [SerializeField] private GameObject _tweetPad;
     [SerializeField] private GameObject _restartIcon;
+    [SerializeField] private GameObject _restartKey;
+    [SerializeField] private GameObject _tweetKey;
+    [SerializeField] private GameObject _restartIconKey;
 
     public bool CanRestart { get; set; }
     public bool CanTweet { get; set; }
@@ -28,6 +31,9 @@ public class InGameUI : MonoBehaviour {
         _restartPad.SetActive(CanRestart && !CanTweet);
         _tweetPad.SetActive(CanTweet && CanRestart);
         _restartIcon.SetActive(CanRestart);
+        _restartKey.SetActive(CanRestart && !CanTweet);
+        _tweetKey.SetActive(CanTweet && CanRestart);
+        _restartIconKey.SetActive(CanRestart);
     }
 
     public void ShowDanceMove(DanceMove dance) {

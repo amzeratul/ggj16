@@ -57,7 +57,26 @@ class Rhythm : MonoBehaviour {
     // start fading in a given layer source
     public void FadeInLayer(int layer)
     {
+        Tween.Stop(_layerSources[layer].gameObject);
         Tween.VolumeTo(_layerSources[layer].gameObject, 1f, 1f, Tween.EaseType.Linear);
+    }
+
+    private void FadeOutLayer(int layer)
+    {
+        Tween.Stop(_layerSources[layer].gameObject);
+        Tween.VolumeTo(_layerSources[layer].gameObject, 0f, 1f, Tween.EaseType.Linear);
+    }
+
+    private void ToggleLayer(int layer)
+    {
+        if (_layerSources[layer].volume > 0f)
+        {
+            FadeOutLayer(layer);
+        }
+        else
+        {
+            FadeInLayer(layer);
+        }
     }
 
     protected void Update() {
@@ -76,7 +95,7 @@ class Rhythm : MonoBehaviour {
             {
                 if (Input.GetKeyDown((KeyCode)((int)KeyCode.Alpha1 + (i-1))))
                 {
-                    FadeInLayer(i);
+                    ToggleLayer(i);
                 }
             }
         }

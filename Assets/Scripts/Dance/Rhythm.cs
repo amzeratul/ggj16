@@ -16,8 +16,10 @@ class Rhythm : MonoBehaviour {
         public int lastBeat = -1;
     }
 
-    [SerializeField] private AudioClip _music;
-    [SerializeField] private AudioSource _source;
+    //[SerializeField] private AudioClip _music;
+    //[SerializeField] private AudioSource _source;
+    [SerializeField] private AudioClip[] _layerClips;
+    [SerializeField] private AudioSource[] _layerSources;
     private readonly List<ListenerBinding> _listeners = new List<ListenerBinding>();
 
     private float _musicTime;
@@ -36,15 +38,26 @@ class Rhythm : MonoBehaviour {
         get { return _bpm; }
     }
 
-    private void PlayMusic(AudioClip music, float delay, float firstBeat, float bpm) {
-        _source.Stop();
-        _source.volume = 1;
-        _source.clip = music;
-        _source.PlayDelayed(delay);
+    private void PlayMusic(float delay, float firstBeat, float bpm) {
+        for (int i = 0; i < _layerClips.Length; i++)
+        {
+            _layerSources[i].Stop();
+            _layerSources[i].volume = (i>0)?0f:1f;
+            _layerSources[i].clip = _layerClips[i];
+            _layerSources[i].PlayDelayed(delay);
+        }
+        //_source.clip = music;
+        //_source.PlayDelayed(delay);
         _bpm = bpm;
         _bps = bpm / 60.0f;
         _musicTime = -delay;
         _firstBeat = firstBeat;
+    }
+
+    // start fading in a given layer source
+    public void FadeInLayer(int layer)
+    {
+        Tween.VolumeTo(_layerSources[layer].gameObject, 1f, 1f, Tween.EaseType.Linear);
     }
 
     protected void Update() {
@@ -56,6 +69,14 @@ class Rhythm : MonoBehaviour {
                 if (curTick > l.lastBeat) {
                     l.lastBeat = curTick;
                     l.listener.OnTick();
+                }
+            }
+
+            for (int i = 1; i < _layerSources.Length; i++)
+            {
+                if (Input.GetKeyDown((KeyCode)((int)KeyCode.Alpha1 + (i-1))))
+                {
+                    FadeInLayer(i);
                 }
             }
         }
@@ -70,7 +91,7 @@ class Rhythm : MonoBehaviour {
     }
 
     public void StartRunning() {
-        PlayMusic(_music, 2.0f, 0.2f, 90);
+        PlayMusic(2.0f, 0.2f, 90);
         _running = true;
     }
 
@@ -83,10 +104,19 @@ class Rhythm : MonoBehaviour {
     }
 
     private IEnumerator DoStop() {
-        for (float t = 0; t < 1; t += Time.deltaTime * 0.25f) {
-            _source.volume = 1 - t;
+        
+        for (float t = 0; t < 1f; t += Time.deltaTime * 0.25f)
+        {
+            for (int i = 0; i < _layerSources.Length; i++)
+            {
+                _layerSources[i].volume = 1f - t;
+               
+            }
             yield return null;
         }
-        _source.Stop();
+        for (int i = 0; i < _layerSources.Length; i++)
+        {
+            _layerSources[i].Stop();
+        }
     }
 }

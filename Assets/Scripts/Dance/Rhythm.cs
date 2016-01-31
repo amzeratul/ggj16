@@ -54,6 +54,11 @@ class Rhythm : MonoBehaviour {
         _firstBeat = firstBeat;
     }
 
+    public void FadeLayerTowards(int layer, float volume) {
+        Tween.Stop(_layerSources[layer].gameObject);
+        Tween.VolumeTo(_layerSources[layer].gameObject, volume, 1f, Tween.EaseType.Linear);
+    }
+
     // start fading in a given layer source
     public void FadeInLayer(int layer)
     {
@@ -91,6 +96,7 @@ class Rhythm : MonoBehaviour {
                 }
             }
 
+#if UNITY_EDITOR
             for (int i = 1; i < _layerSources.Length; i++)
             {
                 if (Input.GetKeyDown((KeyCode)((int)KeyCode.Alpha1 + (i-1))))
@@ -99,6 +105,7 @@ class Rhythm : MonoBehaviour {
                 }
             }
         }
+#endif
     }
 
     public void Register(Listener listener, float headsUp = 0) {

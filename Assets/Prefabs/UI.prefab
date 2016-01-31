@@ -902,7 +902,6 @@ MonoBehaviour:
   - {fileID: 21300068, guid: 7d03b090d8888214b8887588f8f0ca58, type: 3}
   - {fileID: 21300070, guid: 7d03b090d8888214b8887588f8f0ca58, type: 3}
   - {fileID: 21300072, guid: 7d03b090d8888214b8887588f8f0ca58, type: 3}
-  - {fileID: 0}
 --- !u!114 &11469560
 MonoBehaviour:
   m_ObjectHideFlags: 1

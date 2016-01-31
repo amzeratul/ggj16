@@ -3,8 +3,6 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
     [SerializeField] private int _playerNumber = 0;
-    [SerializeField] private int _joystickNumber = 0;
-    [SerializeField] private int _stickNumber = 0;
     [SerializeField] private GameObject[] _sprites;
 
     private DanceExecuter _dance;
@@ -14,6 +12,7 @@ public class PlayerControl : MonoBehaviour {
     private SpriteRenderer _renderer;
     private Animator _animator;
     private bool _flipped;
+    private bool _altStick;
 
     public enum PlayerMoves {
         Idle,
@@ -35,7 +34,20 @@ public class PlayerControl : MonoBehaviour {
     }
 
     private Vector2 GetInputStick() {
-        var joy = "Joy" + _joystickNumber + " " + (_stickNumber == 0 ? "Left" : "Right");
+        if (_playerNumber == 0) {
+            return GetStick(0, 0);
+        } else {
+            var altStickValue = GetStick(1, 0);
+            if (_altStick || altStickValue.magnitude > 0.5) {
+                _altStick = true;
+                return altStickValue;
+            }
+            return GetStick(0, 1);
+        }
+    }
+
+    private static Vector2 GetStick(int joystick, int stick) {
+        var joy = "Joy" + joystick + " " + (stick == 0 ? "Left" : "Right");
         var x = joy + "X";
         var y = joy + "Y";
         return new Vector2(Input.GetAxis(x), Input.GetAxis(y));
@@ -44,9 +56,8 @@ public class PlayerControl : MonoBehaviour {
     public void Init(DanceExecuter dance, int playerNumber) {
         _dance = dance;
         _playerNumber = playerNumber;
-        if (playerNumber == 1) {
-            _stickNumber = 1;
-        }
+        _altStick = false;
+
         _position = _playerNumber * 2 - 1;
         transform.position = GetScreenPosition(_position);
 

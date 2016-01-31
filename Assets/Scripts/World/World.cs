@@ -32,9 +32,11 @@ public class World : MonoBehaviour {
     }
 
     [SerializeField] private VariableTarget[] _variableTargets;
+    [SerializeField] private Rhythm _rhythm;
     private readonly Dictionary<string, int> _variables = new Dictionary<string, int>();
     private readonly List<SpawnSettings> _objTypes = new List<SpawnSettings>();
     private readonly List<GameObject> _objectsAdded = new List<GameObject>();
+    private readonly Dictionary<string, int> _countInTheWorld = new Dictionary<string, int>();
 
     protected void Awake() {
         // Heights:
@@ -101,6 +103,14 @@ public class World : MonoBehaviour {
         } else {
             Debug.LogWarning("Object not found: " + obj + "_" + variation);
         }
+
+        int curCount = 0;
+        if (_countInTheWorld.TryGetValue(obj, out curCount)) {
+            _countInTheWorld.Remove(obj);
+        }
+        ++curCount;
+        _countInTheWorld.Add(obj, curCount);
+        OnNewObjectAdded(obj, curCount);
     }
 
     private void PositionObject(GameObject go, string objName) {
@@ -123,6 +133,23 @@ public class World : MonoBehaviour {
         if (target != null) {
             target.Object.SendMessage("OnVariableSet", value, SendMessageOptions.DontRequireReceiver);
         }
+
+        if (variable == "ground" || variable == "mountain") {
+            float volume = Mathf.Clamp(GetVariable("ground"), 0, 3) * 0.2f + Mathf.Clamp(GetVariable("mountain"), 0, 4) * 0.1f;
+            _rhythm.FadeLayerTowards(1, Mathf.Clamp01(volume));
+        }
+        if (variable == "moon") {
+            _rhythm.FadeLayerTowards(3, Mathf.Clamp01(value / 3.0f));
+        }
+        if (variable == "sun") {
+            _rhythm.FadeLayerTowards(4, Mathf.Clamp01(value / 3.0f));
+        }
+    }
+
+    private void OnNewObjectAdded(string objType, int curCount) {
+        if (objType == "tree") {
+            _rhythm.FadeLayerTowards(2, Mathf.Clamp01(curCount * 0.2f));
+        }
     }
 
     public void Fumble() {
@@ -138,5 +165,6 @@ public class World : MonoBehaviour {
             OnVariableSet(v.Key, 0);
         }
         _variables.Clear();
+        _countInTheWorld.Clear();
     }
 }

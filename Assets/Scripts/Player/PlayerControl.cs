@@ -5,6 +5,8 @@ public class PlayerControl : MonoBehaviour {
     [SerializeField] private int _playerNumber = 0;
     [SerializeField] private int _joystickNumber = 0;
     [SerializeField] private int _stickNumber = 0;
+    [SerializeField] private GameObject[] _sprites;
+
     private DanceExecuter _dance;
     private PlayerMoves _myMove;
     private int _position;
@@ -23,8 +25,9 @@ public class PlayerControl : MonoBehaviour {
     }
 
     protected void Awake() {
-        _renderer = GetComponentInChildren<SpriteRenderer>();
-        _animator = GetComponentInChildren<Animator>();
+        foreach (var s in _sprites) {
+            s.SetActive(false);
+        }
     }
 
     protected void Update () {
@@ -46,10 +49,11 @@ public class PlayerControl : MonoBehaviour {
         }
         _position = _playerNumber * 2 - 1;
         transform.position = GetScreenPosition(_position);
-        if (_playerNumber == 1) {
-            _flipped = true;
-            _renderer.flipX = _flipped;
-        }
+
+        var sprite = _sprites[_playerNumber];
+        sprite.SetActive(true);
+        _renderer = sprite.GetComponent<SpriteRenderer>();
+        _animator = sprite.GetComponent<Animator>();
     }
 
     private void SetInput(Vector2 input) {

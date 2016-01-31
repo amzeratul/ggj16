@@ -1,9 +1,13 @@
 fileFormatVersion: 2
 guid: ea392518d22e040fb844c1c6f7d2d40e
-timeCreated: 1454210190
+timeCreated: 1454230986
 licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: ki_down01_4x1_0
+    21300002: ki_down01_4x1_1
+    21300004: ki_down01_4x1_2
+    21300006: ki_down01_4x1_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +42,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +53,124 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: ki_down01_4x1_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 366
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 90, y: -6}
+        - {x: 65, y: 65}
+        - {x: 20, y: 135}
+        - {x: -14, y: 135}
+        - {x: -17, y: 134}
+        - {x: -44, y: 123}
+        - {x: -73, y: 67}
+        - {x: -77, y: -5}
+        - {x: -100, y: -30}
+        - {x: -100, y: -101}
+        - {x: -93, y: -147}
+        - {x: -47, y: -157}
+        - {x: -32, y: -195}
+        - {x: 43, y: -195}
+        - {x: 88, y: -138}
+        - {x: 96, y: -112}
+        - {x: 96, y: -43}
+    - name: ki_down01_4x1_1
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 0
+        width: 379
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 60.5, y: 15}
+        - {x: 3.5, y: 94}
+        - {x: -36.5, y: 134}
+        - {x: -71.5, y: 134}
+        - {x: -87.5, y: 126}
+        - {x: -90.5, y: 104}
+        - {x: -86.5, y: 94}
+        - {x: -110.5, y: 34}
+        - {x: -110.5, y: -26}
+        - {x: -93.5, y: -86}
+        - {x: -87.5, y: -148}
+        - {x: -37.5, y: -195}
+        - {x: 74.5, y: -195}
+        - {x: 93.5, y: -151}
+        - {x: 93.5, y: -69}
+    - name: ki_down01_4x1_2
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 0
+        width: 371
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 84.5, y: -197}
+        - {x: 130.5, y: -89}
+        - {x: 130.5, y: -78}
+        - {x: 112.5, y: -41}
+        - {x: -7.5, y: 140}
+        - {x: -66.5, y: 187}
+        - {x: -87.5, y: 187}
+        - {x: -105.5, y: 172}
+        - {x: -104.5, y: 161}
+        - {x: -92.5, y: 147}
+        - {x: -124.5, y: 118}
+        - {x: -126.5, y: 106}
+        - {x: -126.5, y: 10}
+        - {x: -101.5, y: -35}
+        - {x: -69.5, y: -147}
+        - {x: -29.5, y: -197}
+        - {x: -12.5, y: -197}
+        - {x: -7.5, y: -159}
+        - {x: 43.5, y: -195}
+        - {x: 53.5, y: -197}
+    - name: ki_down01_4x1_3
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 0
+        width: 384
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 138, y: 14}
+        - {x: 64, y: 60}
+        - {x: 45, y: 95}
+        - {x: 3, y: 203}
+        - {x: -58, y: 203}
+        - {x: -66, y: 173}
+        - {x: -54, y: 168}
+        - {x: -46, y: 168}
+        - {x: -108, y: 120}
+        - {x: -119, y: 85}
+        - {x: -119, y: 35}
+        - {x: -113, y: -9}
+        - {x: -84, y: -140}
+        - {x: -84, y: -195}
+        - {x: -47, y: -195}
+        - {x: 40, y: -141}
+        - {x: 33, y: -195}
+        - {x: 67, y: -195}
+        - {x: 87, y: -159}
+        - {x: 93, y: -102}
+        - {x: 138, y: -48}
     outline: []
   spritePackingTag: 
   userData: 

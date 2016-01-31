@@ -1,9 +1,14 @@
 fileFormatVersion: 2
 guid: 6ca7db632daba4fad8739223680245fc
-timeCreated: 1454210188
+timeCreated: 1454231073
 licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: ki_right_5x1_0
+    21300002: ki_right_5x1_1
+    21300004: ki_right_5x1_2
+    21300006: ki_right_5x1_3
+    21300008: ki_right_5x1_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +35,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +43,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +54,176 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: ki_right_5x1_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 0
+        width: 402
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 146, y: 73}
+        - {x: 130, y: 75}
+        - {x: 99, y: 38}
+        - {x: 57, y: 79}
+        - {x: 16, y: 155}
+        - {x: -22, y: 205}
+        - {x: -61, y: 205}
+        - {x: -74, y: 199}
+        - {x: -71, y: 176}
+        - {x: -95, y: 125}
+        - {x: -106, y: 88}
+        - {x: -106, y: 27}
+        - {x: -94, y: -6}
+        - {x: -83, y: -130}
+        - {x: -67, y: -185}
+        - {x: -63, y: -195}
+        - {x: -32, y: -195}
+        - {x: 17, y: -139}
+        - {x: 75, y: -195}
+        - {x: 98, y: -195}
+        - {x: 107, y: -193}
+        - {x: 130, y: -61}
+        - {x: 154, y: 18}
+        - {x: 154, y: 52}
+    - name: ki_right_5x1_1
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 0
+        width: 356
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 91, y: 5}
+        - {x: 121, y: 22}
+        - {x: 134, y: 60}
+        - {x: 134, y: 98}
+        - {x: 113, y: 130}
+        - {x: 76, y: 141}
+        - {x: 59, y: 88}
+        - {x: 33, y: 167}
+        - {x: -17, y: 227}
+        - {x: -37, y: 227}
+        - {x: -58, y: 216}
+        - {x: -107, y: 140}
+        - {x: -107, y: 83}
+        - {x: -100, y: 68}
+        - {x: -95, y: 12}
+        - {x: -99, y: -125}
+        - {x: 17, y: -191}
+        - {x: 19, y: -173}
+        - {x: 18, y: -158}
+        - {x: 26, y: -195}
+        - {x: 48, y: -195}
+        - {x: 58, y: -187}
+        - {x: 118, y: -75}
+        - {x: 112, y: -55}
+    - name: ki_right_5x1_2
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 0
+        width: 386
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 143, y: 135}
+        - {x: 136, y: 145}
+        - {x: 126, y: 154}
+        - {x: 122, y: 157}
+        - {x: 112, y: 157}
+        - {x: 1, y: 169}
+        - {x: -26, y: 174}
+        - {x: -41, y: 173}
+        - {x: -54, y: 205}
+        - {x: -61, y: 211}
+        - {x: -65, y: 214}
+        - {x: -97, y: 214}
+        - {x: -119, y: 208}
+        - {x: -119, y: 54}
+        - {x: -75, y: -1}
+        - {x: -119, y: -81}
+        - {x: -119, y: -105}
+        - {x: -13, y: -193}
+        - {x: -7, y: -195}
+        - {x: 36, y: -195}
+        - {x: 120, y: -108}
+        - {x: 90, y: 3}
+        - {x: 143, y: 63}
+    - name: ki_right_5x1_3
+      rect:
+        serializedVersion: 2
+        x: 1151
+        y: 0
+        width: 398
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 108, y: 19}
+        - {x: 143, y: 54}
+        - {x: 143, y: 142}
+        - {x: 112, y: 155}
+        - {x: 63, y: 70}
+        - {x: 20, y: 152}
+        - {x: -35, y: 203}
+        - {x: -57, y: 203}
+        - {x: -76, y: 192}
+        - {x: -120, y: 112}
+        - {x: -120, y: 45}
+        - {x: -98, y: -5}
+        - {x: -99, y: -91}
+        - {x: -117, y: -115}
+        - {x: -88, y: -135}
+        - {x: -64, y: -141}
+        - {x: -51, y: -195}
+        - {x: 60, y: -195}
+        - {x: 57, y: -163}
+        - {x: 101, y: -103}
+        - {x: 92, y: -56}
+    - name: ki_right_5x1_4
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 0
+        width: 358
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 103, y: -53}
+        - {x: 92, y: 1}
+        - {x: 148, y: 39}
+        - {x: 148, y: 130}
+        - {x: 127, y: 170}
+        - {x: 56, y: 82}
+        - {x: 40, y: 145}
+        - {x: -5, y: 213}
+        - {x: -8, y: 216}
+        - {x: -49, y: 216}
+        - {x: -86, y: 204}
+        - {x: -109, y: 157}
+        - {x: -109, y: 52}
+        - {x: -101, y: 14}
+        - {x: -109, y: -93}
+        - {x: -109, y: -101}
+        - {x: -96, y: -120}
+        - {x: -43, y: -147}
+        - {x: -27, y: -196}
+        - {x: 56, y: -196}
+        - {x: 62, y: -188}
+        - {x: 109, y: -83}
     outline: []
   spritePackingTag: 
   userData: 
